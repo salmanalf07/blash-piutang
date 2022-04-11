@@ -96,15 +96,16 @@ class BlashController extends Controller
             $data = Mahasiswa::with('surat.kemahasiswaan', 'surat.norek')
                 ->find($request->mahasiswa[$count]);
             $tempalte = Template::find($request->template_id);
-            $path = base_path('surat-piutang-B23.png');
-            $type = pathinfo($path, PATHINFO_EXTENSION);
-            $img = file_get_contents($path);
-            $pic = 'data:image/' . $type . ';base64,' . base64_encode($img);
+            // $path = base_path('surat-piutang-B23.png');
+            // $type = pathinfo($path, PATHINFO_EXTENSION);
+            // $img = file_get_contents($path);
+            // $pic = 'data:image/' . $type . ';base64,' . base64_encode($img);
             $bulan = date('n');
             $romawi = $this->getRomawi($bulan);
 
-            $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView($tempalte->template, compact('pic'), ['data' => $data, 'romawi' => $romawi]);
-
+            // $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView($tempalte->template, compact('pic'), ['data' => $data, 'romawi' => $romawi]);
+            $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView($tempalte->template, ['data' => $data, 'romawi' => $romawi]);
+            return $pdf->stream();
             $dada['email'] = $data->email;
             $dada['subject'] = $data->surat['hal'];
             $dada['nim'] = $data->nim;
@@ -115,11 +116,20 @@ class BlashController extends Controller
                     ->subject($dada['subject'])
                     ->attachData($pdf->output(), $dada['nim'] . ".pdf");
             });
+
+            // check for failures
+            if (!Mail::failures()) {
+                $post = Mahasiswa::find($data->id);
+                $post->status = "SUCCESS";
+                $post->save();
+                //delete
+                $post->delete();
+            }
         }
-        for ($count = 0; $count < count($request->mahasiswa); $count++) {
-            $post = Mahasiswa::find($request->mahasiswa[$count]);
-            $post->delete();
-        }
+        // for ($count = 0; $count < count($request->mahasiswa); $count++) {
+        //     $post = Mahasiswa::find($request->mahasiswa[$count]);
+        //     $post->delete();
+        // }
         return redirect('/dashboard');
         //dd('Mail sent successfully');
         //return $pdf->download($data->nim . '-pdf');

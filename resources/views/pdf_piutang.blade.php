@@ -356,7 +356,7 @@
 
 <body>
   <div class="pdf">
-    <img class="img-pdf" src="{{$pic}}">
+    <img class="img-pdf" src="./img/surat-piutang-B23.png">
     <div class="content">
       <table class="no">
         <colgroup>
