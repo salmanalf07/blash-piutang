@@ -40,7 +40,7 @@
             <!-- Left side columns -->
             <div class="col-lg-12">
                 <div class="row">
-                    <form action="/dashboard" id="form-import" method="post" enctype="multipart/form-data">
+                    <form action="/import_reaktif" id="form-import" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Input File Excel</label>
@@ -54,11 +54,11 @@
                         </div>
                     </form>
                     <div class=" mb-3" style="width: fit-content;">
-                        <a class="btn btn-primary" href="{{ Storage::url('import.xlsx') }}">Download Template
+                        <a class="btn btn-primary" href="download_reaktif">Download Template
                             Excel</a>
                     </div>
                     <div class="mb-3" style="width: fit-content;">
-                        <form action="/clear" id="form-clear" method="post" enctype="multipart/form-data">
+                        <form action="/reaktif_clear" id="form-clear" method="post" enctype="multipart/form-data">
                             @csrf
                             @forelse ($mahasiswa as $datamaha)
                             <input type="text" name="mahasiswa[]" value="{{ $datamaha->id }}" hidden>
@@ -81,66 +81,9 @@
                                                     <h5 class="modal-title">Send Email</h5>
                                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                 </div>
-                                                <form action="/blash" id="form-add" method="post" enctype="multipart/form-data">
+                                                <form action="/BlashReaktif" id="form-add" method="post" enctype="multipart/form-data">
                                                     @csrf
                                                     <div class="modal-body">
-                                                        <div class="form-group">
-                                                            <label for="template_id">Template PDF</label>
-                                                            <select class="form-control" name="template_id" id="template_id">
-                                                                @forelse ($template as $template)
-                                                                <option value="#" selected="selected">--PILIH--
-                                                                </option>
-                                                                <option value="{{ $template->id }}">
-                                                                    {{ $template->template }}
-                                                                </option>
-                                                                @empty
-                                                                <option value="#" selected="selected">--PILIH--
-                                                                </option>
-                                                                @endforelse
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="hal">Hal Surat</label>
-                                                            <input type="text" class="form-control" name="hal" id="hal" placeholder="Peringatan Pembayaran">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="semester">Tahun Ajaran</label>
-                                                            <input type="text" class="form-control" name="semester" id="semester" placeholder="2019/2020">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="date_bayar">Tanggal Pembayaran</label>
-                                                            <input type="text" class="form-control" name="date_bayar" id="date_bayar" placeholder="22/01/2022">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="norek_id">Rekening pembayaran</label>
-                                                            <select class="form-control" name="norek_id" id="norek_id">
-                                                                @forelse ($rekening as $rekening)
-                                                                <option value="#" selected="selected">--PILIH--
-                                                                </option>
-                                                                <option value="{{ $rekening->id }}">
-                                                                    {{ $rekening->nama_rek }}
-                                                                </option>
-                                                                @empty
-                                                                <option value="#" selected="selected">--PILIH--
-                                                                </option>
-                                                                @endforelse
-                                                            </select>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label for="kemahasiswaan_id">Layanan Kemahasiswaan</label>
-                                                            <select class="form-control" name="kemahasiswaan_id" id="kemahasiswaan_id">
-                                                                @forelse ($kemahasiswaan as $kemahasiswaan)
-                                                                <option value="#" selected="selected">--PILIH--
-                                                                </option>
-                                                                <option value="{{ $kemahasiswaan->id }}">
-                                                                    {{ $kemahasiswaan->nama }}
-                                                                </option>
-                                                                @empty
-                                                                <option value="#" selected="selected">--PILIH--
-                                                                </option>
-                                                                @endforelse
-                                                            </select>
-                                                        </div>
                                                         <div class="form-group">
                                                             @forelse ($mahasiswa as $datamaha)
                                                             <input type="text" name="mahasiswa[]" value="{{ $datamaha->id }}" hidden>
@@ -191,8 +134,6 @@
                                             <th scope="col">NIM</th>
                                             <th scope="col">Nama</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col">Total Tunggakan</th>
-                                            <th scope="col">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -203,10 +144,8 @@
                                         <tr>
                                             <th scope="row">{{ ++$no }}</th>
                                             <td>{{ $mahasiswa->nim }}</td>
-                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->mahasiswa }}</td>
                                             <td>{{ $mahasiswa->email }}</td>
-                                            <td>{{ $mahasiswa->total }}</td>
-                                            <td>{{ $mahasiswa->total }}</td>
                                         </tr>
                                         @empty
                                         <td colspan="6" class="table-active text-center">Data Empty</td>

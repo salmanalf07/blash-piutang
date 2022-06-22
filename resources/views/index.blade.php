@@ -28,14 +28,23 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <style>
+    .layer3 {
+      padding-left: 60px !important;
+    }
+
+    .blue span {
+      color: #4154f1;
+    }
+  </style>
 
 
 </head>
 
 <body>
-<div id="pageloader">
+  <div id="pageloader">
     <img src="http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="processing..." />
-</div>
+  </div>
   <!-- ======= Header ======= -->
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
@@ -121,6 +130,30 @@
           <span>History</span>
         </a>
       </li><!-- End Profile Page Nav -->
+      <li class="nav-item">
+        <a class="nav-link {{ request()->is('reaktif','reak_history') ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+          <i class="bi bi-menu-button-wide"></i><span>Blash</span><i class="bi bi-chevron-down ms-auto"></i>
+        </a>
+        <ul id="components-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history') ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
+          <li>
+            <a class="nav-link {{ request()->is('reaktif','reak_history') ? 'blue' : ''}}" data-bs-target="#reaktif-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reaktif</span>
+            </a>
+            <ul id="reaktif-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history') ? 'show' : ''}}">
+              <li>
+                <a class="layer3 {{ request()->is('reaktif') ? 'active' : ''}}" href="reaktif">
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="layer3 {{ request()->is('reak_history') ? 'active' : ''}}" href="reak_history">
+                  <span>History</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
     </ul>
 
   </aside><!-- End Sidebar-->

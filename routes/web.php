@@ -1,11 +1,15 @@
 <?php
 
 use App\Http\Controllers\BlashController;
+use App\Http\Controllers\ReaktifController;
 use App\Imports\MahasiswaImport;
+use App\Imports\ReaktifImport;
 use App\Models\Kemahasiswaan;
 use App\Models\Mahasiswa;
+use App\Models\reaktif;
 use App\Models\Rekening;
 use App\Models\Template;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -34,7 +38,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::middleware(['auth:sanctum', 'verified'])->post('/dashboard', function () {
     Excel::import(new MahasiswaImport, request()->file('file'));
     return back();
-})->name('dashboard');
+})->name('dashboardd');
 Route::middleware(['auth:sanctum', 'verified'])->post('/blash', [BlashController::class, 'send_mail']);
 Route::middleware(['auth:sanctum', 'verified'])->post('/clear', [BlashController::class, 'clear']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/history', function () {
@@ -46,3 +50,26 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/pdf', function () {
         ->find(4);
     return view('pdf_piutang', ['data' => $data]);
 });
+//Reaktif
+Route::middleware(['auth:sanctum', 'verified'])->get('/download_reaktif', function () {
+    $filePath = public_path("/assets/excel/import.xlsx");
+    return Response::download($filePath);
+})->name('download_reaktif');
+Route::middleware(['auth:sanctum', 'verified'])->post('/reaktif_clear', [ReaktifController::class, 'clear']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/reaktif', function () {
+    $mahasiswa = reaktif::all();
+    $rekening = Rekening::all();
+    $kemahasiswaan = Kemahasiswaan::all();
+    $template = Template::all();
+    return view('reaktif/dashboard', ['mahasiswa' => $mahasiswa, 'rekening' => $rekening, 'kemahasiswaan' => $kemahasiswaan, 'template' => $template]);
+})->name('reaktif');
+Route::middleware(['auth:sanctum', 'verified'])->post('/import_reaktif', function () {
+    Excel::import(new ReaktifImport, request()->file('file'));
+    return back();
+})->name('import_reaktif');
+Route::middleware(['auth:sanctum', 'verified'])->get('/reak_history', function () {
+    $mahasiswa = reaktif::onlyTrashed()->get();
+    return view('reaktif/history', ['mahasiswa' => $mahasiswa]);
+})->name('reak_history');
+Route::middleware(['auth:sanctum', 'verified'])->post('/BlashReaktif', [ReaktifController::class, 'send_mail']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/cek_reaktif', [ReaktifController::class, 'cetak_pdf']);
