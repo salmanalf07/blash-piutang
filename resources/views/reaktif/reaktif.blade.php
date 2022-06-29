@@ -65,7 +65,7 @@
       top: 220px;
       left: 158px;
       width: 600px;
-      font-size: 12pt;
+      font-size: 10pt;
       padding: 2px;
       /* border: 1px solid black; */
       text-align: justify;
@@ -96,6 +96,34 @@
 </head>
 
 <body>
+
+  <?php
+  if (!function_exists('getRomawi')) {
+    function getRomawi($tanggal)
+    {
+      $bulan = array(
+        1 =>   'Januari',
+        'Februari',
+        'Maret',
+        'April',
+        'Mei',
+        'Juni',
+        'Juli',
+        'Agustus',
+        'September',
+        'Oktober',
+        'November',
+        'Desember'
+      );
+
+      $pecahkan = explode('-', $tanggal);
+
+      return $pecahkan[2] . ' ' . $bulan[(int)$pecahkan[1]] . ' ' . $pecahkan[0];
+    }
+  }
+
+  ?>
+
   <div class="pdf">
     <img class="img-pdf" src="{{$pic}}">
     <div class="content">
@@ -113,7 +141,10 @@
             <td colspan="3" style="height: 20px;"></td>
           </tr>
           <tr>
-            <td colspan="3">Bagi Binusian yang saat ini status perkuliahannya CUTI TIDAK RESMI dan ingin aktif kembali di perkuliahan Semester {{$semester}} {{$data->semester}} masih ada kesempatan untuk mengajukan proses REAKTIF. Prosedur Reaktif sebagai berikut:</td>
+            <td colspan="3">Bagi Binusian yang saat ini status perkuliahannya CUTI TIDAK RESMI dan ingin aktif kembali di perkuliahan Semester {{$semester}} {{$data->semester}}, masih ada kesempatan untuk mengajukan proses REAKTIF.</td>
+          </tr>
+          <tr>
+            <td colspan="3">Prosedur Reaktif adalah sebagai berikut:</td>
           </tr>
           <tr>
             <td colspan="3" style="height: 5px;"></td>
@@ -121,30 +152,30 @@
           <tr>
             <td></td>
             <td class="veralig-top">1.</td>
-            <td>Silakan isi formulir reaktif (terlampir)</td>
+            <td>Silakan isi formulir reaktif (terlampir).</td>
           </tr>
           <tr>
             <td></td>
             <td class="veralig-top">2.</td>
-            <td>Mengirimkan scan Formulir reaktif yang sudah diisi ke Student Advisory & Support Center melalui email sasc.bekasi@binus.edu serta cc: studentservices_bekasi@binus.edu dan kania.fadjrin@binus.edu </td>
+            <td>Mengirimkan hasil scan formulir reaktif yang sudah diisi ke Student Advisory & Support Center (SASC) melalui email <a style="font-style:italic ;" href="mailto:sasc.bekasi@binus.edu">sasc.bekasi@binus.edu</a> serta cc: <a style="font-style:italic ;" href="mailto:studentservices_bekasi@binus.edu">studentservices_bekasi@binus.edu</a> dan <a style="font-style:italic ;" href="mailto:kania.fadjrin@binus.edu">kania.fadjrin@binus.edu</a>.</td>
           </tr>
           <tr>
             <td></td>
             <td class="veralig-top">3.</td>
-            <td>Setelah proses di Student Advisory & Support Center selesai, selanjutnya akan di proses oleh Student Services.</td>
+            <td>Mahasiswa akan dihubungi oleh pihak Student Services Center (SSC) untuk melakukan pembayaran reaktif apabila seluruh proses administratif sudah selesai.</td>
           </tr>
           @if($data->i_tambahan != null)
           <tr>
             <td></td>
             <td class="veralig-top">4.</td>
-            <td>{{$data->i_tambahan}}</td>
+            <td><?php echo $data->i_tambahan ?></td>
           </tr>
           @endif
           <tr>
             <td colspan="3" style="height:10px"></td>
           </tr>
           <tr>
-            <td colspan="3" class="bold">*Batas Pengajuan Form Reaktif selambatnya {{date('d F Y', strtotime($data->tgl_batas) )}}</td>
+            <td colspan="3" class="bold">*Batas pengajuan form reaktif selambatnya <?php echo getRomawi($data->tgl_batas) ?>.</td>
           </tr>
           <tr>
             <td colspan="3" style="height:10px"></td>
@@ -159,7 +190,7 @@
             <td colspan="3">Best Regards,</td>
           </tr>
           <tr>
-            <td colspan="3">Student Services BINUS @Bekasi</td>
+            <td colspan="3">Student Services BINUS@Bekasi</td>
           </tr>
         </tbody>
       </table>

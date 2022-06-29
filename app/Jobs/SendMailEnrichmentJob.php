@@ -2,8 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Models\reaktif;
-use App\Models\Template;
+use App\Models\enrichment;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
@@ -13,7 +12,7 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Mail;
 
-class SendMailReaktifJob implements ShouldQueue
+class SendMailEnrichmentJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
@@ -51,7 +50,7 @@ class SendMailReaktifJob implements ShouldQueue
         }
         //end
 
-        $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView('reaktif/reaktif', compact('pic'), ['data' => $this->data, 'semester' => $semester]);
+        $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView('enrichment/enrichment', compact('pic'), ['data' => $this->data, 'semester' => $semester]);
 
         $dada['email'] = $this->data->email;
         $dada['subject'] = "Reaktif Email";
@@ -62,13 +61,12 @@ class SendMailReaktifJob implements ShouldQueue
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject'])
-                ->attachData($pdf->output(), $dada['nim'] . ".pdf")
-                ->attach(public_path('/assets/file/Form-Reaktif-FM-BINUS-AA-FPU-117.pdf'));
+                ->attachData($pdf->output(), $dada['nim'] . ".pdf");
         });
 
         // check for failures
         if (!Mail::failures()) {
-            $postt = reaktif::find($this->data->id);
+            $postt = enrichment::find($this->data->id);
             $postt->status = "SUCCESS";
             $postt->save();
             //delete

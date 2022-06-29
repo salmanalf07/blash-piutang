@@ -2,22 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\SendMailReaktifJob;
-use App\Models\reaktif;
-use App\Models\Template;
-use Barryvdh\DomPDF\Facade as PDF;
-use Illuminate\Support\Facades\Mail;
+use App\Jobs\SendMailEnrichmentJob;
+use App\Models\enrichment;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade as PDF;
 
-class ReaktifController extends Controller
+class EnrichmentController extends Controller
 {
     public function clear(Request $request)
     {
         for ($count = 0; $count < count($request->mahasiswa); $count++) {
-            $post = reaktif::find($request->mahasiswa[$count]);
+            $post = enrichment::find($request->mahasiswa[$count]);
             $post->forceDelete();
         }
-        return redirect('/reaktif');
+        return redirect('/enrichment');
     }
 
     public function send_mail(Request $request)
@@ -25,14 +23,14 @@ class ReaktifController extends Controller
 
         for ($count = 0; $count < count($request->mahasiswa); $count++) {
 
-            $base = reaktif::where(['id' => $request->mahasiswa[$count]]);
+            $base = enrichment::where(['id' => $request->mahasiswa[$count]]);
             // $base->update([
             //     'template_id' => $request->template_id,
             // ]);
 
             $data = $base->first();
 
-            SendMailReaktifJob::dispatch($data);
+            SendMailEnrichmentJob::dispatch($data);
         }
 
         return redirect('/reaktif');
@@ -42,9 +40,10 @@ class ReaktifController extends Controller
 
         //return back();
     }
+
     public function cetak_pdf()
     {
-        $pegawai = reaktif::find(8);
+        $mahasiswa = enrichment::find(10);
 
         $path = base_path('surat-piutang-B23.png');
         $type = pathinfo($path, PATHINFO_EXTENSION);
@@ -52,7 +51,7 @@ class ReaktifController extends Controller
         $pic = 'data:image/' . $type . ';base64,' . base64_encode($img);
 
         //menentukan semester
-        $bil = (int)substr($pegawai->semester, 8);
+        $bil = (int)substr($mahasiswa->semester, 8);
         if ($bil % 2 == 0) { //Kondisi
             $semester = "Genap";
         } else {
@@ -60,7 +59,7 @@ class ReaktifController extends Controller
         }
         //end
 
-        $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView('reaktif/reaktif', compact('pic'), ['data' => $pegawai, 'semester' => $semester]);
+        $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView('enrichment/enrichment', compact('pic'), ['data' => $mahasiswa, 'semester' => $semester]);
         return $pdf->download('laporan-pegawai-pdf');
     }
 }

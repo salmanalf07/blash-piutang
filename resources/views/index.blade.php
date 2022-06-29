@@ -131,10 +131,10 @@
         </a>
       </li><!-- End Profile Page Nav -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->is('reaktif','reak_history') ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->is('reaktif','reak_history','enrichment') ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Blash</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history') ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
+        <ul id="components-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history','enrichment','enrichment_history') ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
           <li>
             <a class="nav-link {{ request()->is('reaktif','reak_history') ? 'blue' : ''}}" data-bs-target="#reaktif-nav" data-bs-toggle="collapse" href="#">
               <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reaktif</span>
@@ -147,6 +147,23 @@
               </li>
               <li>
                 <a class="layer3 {{ request()->is('reak_history') ? 'active' : ''}}" href="reak_history">
+                  <span>History</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link {{ request()->is('enrichment','enrichment_history') ? 'blue' : ''}}" data-bs-target="#enricment-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reminder Enrichment</span>
+            </a>
+            <ul id="enricment-nav" class="nav-content collapse {{ request()->is('enrichment','enrichment_history') ? 'show' : ''}}">
+              <li>
+                <a class="layer3 {{ request()->is('enrichment') ? 'active' : ''}}" href="enrichment">
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="layer3 {{ request()->is('enrichment_history') ? 'active' : ''}}" href="cek_enrichment">
                   <span>History</span>
                 </a>
               </li>

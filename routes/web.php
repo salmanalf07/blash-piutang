@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\BlashController;
+use App\Http\Controllers\EnrichmentController;
 use App\Http\Controllers\ReaktifController;
+use App\Imports\EnrichmentIImport;
+use App\Imports\EnrichmentImport;
 use App\Imports\MahasiswaImport;
 use App\Imports\ReaktifImport;
+use App\Models\enrichment;
 use App\Models\Kemahasiswaan;
 use App\Models\Mahasiswa;
 use App\Models\reaktif;
@@ -73,3 +77,24 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/reak_history', function (
 })->name('reak_history');
 Route::middleware(['auth:sanctum', 'verified'])->post('/BlashReaktif', [ReaktifController::class, 'send_mail']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/cek_reaktif', [ReaktifController::class, 'cetak_pdf']);
+//Enrichment
+Route::middleware(['auth:sanctum', 'verified'])->get('/download_enrichment', function () {
+    $filePath = public_path("/assets/excel/EnrichmentImport.xlsx");
+    return Response::download($filePath);
+})->name('download_enrichment');
+Route::middleware(['auth:sanctum', 'verified'])->post('/import_enrichment', function () {
+    Excel::import(new EnrichmentImport, request()->file('file'));
+    return back();
+})->name('import_enrichment');
+Route::middleware(['auth:sanctum', 'verified'])->post('/enrichment_clear', [EnrichmentController::class, 'clear']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/enrichment', function () {
+    $mahasiswa = enrichment::all();
+    $template = Template::all();
+    return view('enrichment/dashboard', ['mahasiswa' => $mahasiswa, 'template' => $template]);
+})->name('enrichment');
+Route::middleware(['auth:sanctum', 'verified'])->get('/enrichment_history', function () {
+    $mahasiswa = enrichment::onlyTrashed()->get();
+    return view('enrichment/history', ['mahasiswa' => $mahasiswa]);
+})->name('enrichment_history');
+Route::middleware(['auth:sanctum', 'verified'])->post('/BlashEnrichment', [EnrichmentController::class, 'send_mail']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/cek_enrichment', [EnrichmentController::class, 'cetak_pdf']);
