@@ -33,7 +33,7 @@ class EnrichmentController extends Controller
             SendMailEnrichmentJob::dispatch($data);
         }
 
-        return redirect('/reaktif');
+        return redirect('/enrichment');
         //return $pdf->stream();
         //dd('Mail sent successfully');
         //return $pdf->download($data->nim . '-pdf');

@@ -53,9 +53,9 @@ class SendMailEnrichmentJob implements ShouldQueue
         $pdf = PDF::setOptions(['defaultFont' => 'sans-serif'])->loadView('enrichment/enrichment', compact('pic'), ['data' => $this->data, 'semester' => $semester]);
 
         $dada['email'] = $this->data->email;
-        $dada['subject'] = "Reaktif Email";
+        $dada['subject'] = "Enrichment Email";
         $dada['nim'] = $this->data->nim;
-        $dada["body"] = "Ini Email testing Reaktif pake Queue";
+        $dada["body"] = "Ini Email testing Enrichment pake Queue";
 
         Mail::send('emails.myTestMail', $dada, function ($message) use ($dada, $pdf) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
