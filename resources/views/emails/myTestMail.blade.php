@@ -9,10 +9,16 @@
 </head>
 
 <body>
-    <h1>{{ $subject }}</h1>
-    <p>{{ $body }}</p>
-
-    <p>Thank you</p>
+    <p>Dear Binusian,</p>
+    <br>
+    <p>Terlampir adalah informasi reaktif pada Semester {{$semester}} <b>{{$tgl_semester}}</b> bagi Binusian yang status perkuliahan nya CUTI TIDAK RESMI dan berencana ingin aktif kembali.</p>
+    <br>
+    <p>Atas perhatian nya Kami ucapkan terima kasih.</p>
+    <br>
+    <p>Best Regards,</p>
+    <br>
+    <p>Student Services</p>
+    <p>Binus University @Bekasi</p>
 </body>
 
 </html>

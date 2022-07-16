@@ -57,6 +57,8 @@ class SendMailReaktifJob implements ShouldQueue
         $dada['subject'] = "Reaktif Email";
         $dada['nim'] = $this->data->nim;
         $dada["body"] = "Ini Email testing Reaktif pake Queue";
+        $dada["semester"] = $semester;
+        $dada["tgl_semester"] = $this->data->semester;
 
         Mail::send('emails.myTestMail', $dada, function ($message) use ($dada, $pdf) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
