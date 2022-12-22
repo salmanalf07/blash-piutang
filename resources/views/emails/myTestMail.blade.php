@@ -11,9 +11,9 @@
 <body>
     <p>Dear Binusian,</p>
     <br>
-    <p>Terlampir adalah informasi reaktif pada <b>Semester {{$tgl_semester}}</b> bagi Binusian yang status perkuliahan nya <b>CUTI TIDAK RESMI</b> dan berencana ingin aktif kembali.</p>
+    <p>Terlampir adalah informasi reaktif pada <b>SEMESTER {{$tgl_semester}}</b> bagi Binusian yang status perkuliahan nya <b>CUTI TIDAK RESMI</b> dan berencana ingin aktif kembali.</p>
     <br>
-    <p>Atas perhatian nya Kami ucapkan terima kasih.</p>
+    <p>Atas perhatiannya Kami ucapkan terima kasih.</p>
     <br>
     <p>Best Regards,</p>
     <br>
