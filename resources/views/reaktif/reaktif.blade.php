@@ -141,7 +141,7 @@
             <td colspan="3" style="height: 20px;"></td>
           </tr>
           <tr>
-            <td colspan="3">Bagi Binusian yang saat ini status perkuliahannya <b>CUTI TIDAK RESMI</b> dan ingin aktif kembali di perkuliahan Semester {{$semester}} {{$data->semester}}, masih ada kesempatan untuk mengajukan proses <b>REAKTIF</b>.</td>
+            <td colspan="3">Bagi Binusian yang saat ini status perkuliahannya <b>CUTI TIDAK RESMI</b> dan ingin aktif kembali di perkuliahan Semester {{$data->semester}}, masih ada kesempatan untuk mengajukan proses <b>REAKTIF</b>.</td>
           </tr>
           <tr>
             <td colspan="3">Prosedur Reaktif adalah sebagai berikut:</td>
@@ -172,7 +172,7 @@
           <tr>
             <td></td>
             <td class="veralig-top">5.</td>
-            <td>Pada periode cuti tidak resmi, Mahasiswa tetap wajib membayarkan Biaya BP3 dan Biaya Lab (jika ada), serta Biaya Semester pada periode Reaktif kembali secara penuh <i>(full payment)</i>. Informasi terkait rincian pembayaran akan kami info setelah proses dari Student Advisory & Support Center (SASC) selesai.</td>
+            <td>Pada periode cuti tidak resmi, Mahasiswa tetap wajib membayarkan Biaya BP3, Biaya Daftar Ulang (jika ada) dan Biaya Lab (jika ada), serta Biaya Semester pada periode Reaktif kembali secara penuh <i>(full payment)</i>. Informasi terkait rincian pembayaran akan kami info setelah proses dari Student Advisory & Support Center (SASC) selesai.</td>
           </tr>
           <!-- @if($data->i_tambahan != null)
           <tr>
@@ -215,13 +215,13 @@
             <td colspan="3" style="height:10px"></td>
           </tr>
           <tr>
-            <td colspan="3">Senin – Jumat >> 09:00 – 17:00 WIB</td>
+            <td colspan="3">Senin – Jumat >> 07:00 – 18:00 WIB</td>
           </tr>
           <tr>
             <td colspan="3" style="height:10px"></td>
           </tr>
           <tr>
-            <td colspan="3">Sabtu >> 09:00 – 15:00 WIB</td>
+            <td colspan="3">Sabtu >> 07:00 – 15:00 WIB</td>
           </tr>
           <tr>
             <td colspan="3" style="height:20px"></td>
