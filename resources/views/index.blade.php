@@ -125,18 +125,12 @@
         </a>
       </li><!-- End Dashboard Nav -->
       <li class="nav-item">
-        <a class="nav-link {{ request()->is('history') ? 'active' : 'collapsed'}}" href="history">
-          <i class="bi bi-journal-text"></i>
-          <span>History</span>
-        </a>
-      </li><!-- End Profile Page Nav -->
-      <li class="nav-item">
-        <a class="nav-link {{ request()->is('reaktif','reak_history','enrichment') ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->is('reaktif','reak_history','infoautodebet','infoautodebet_history') ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Blash</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history','enrichment','enrichment_history') ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
+        <ul id="components-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history','infoautodebet','infoautodebet_history') ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
           <li>
-            <a class="nav-link {{ request()->is('reaktif','reak_history') ? 'blue' : ''}}" data-bs-target="#reaktif-nav" data-bs-toggle="collapse" href="#">
+            <a class="nav-link {{ request()->is('reaktif','reak_history') ? 'blue' : 'collapsed'}}" data-bs-target="#reaktif-nav" data-bs-toggle="collapse" href="#">
               <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reaktif</span>
             </a>
             <ul id="reaktif-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history') ? 'show' : ''}}">
@@ -153,17 +147,17 @@
             </ul>
           </li>
           <li>
-            <a class="nav-link {{ request()->is('enrichment','enrichment_history') ? 'blue' : ''}}" data-bs-target="#enricment-nav" data-bs-toggle="collapse" href="#">
-              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reminder Enrichment</span>
+            <a class="nav-link {{ request()->is('infoautodebet','infoautodebet_history') ? 'blue' : 'collapsed'}}" data-bs-target="#infoautodebet-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Info Next Autodebet</span>
             </a>
-            <ul id="enricment-nav" class="nav-content collapse {{ request()->is('enrichment','enrichment_history') ? 'show' : ''}}">
+            <ul id="infoautodebet-nav" class="nav-content collapse {{ request()->is('infoautodebet','infoautodebet_history') ? 'show' : ''}}">
               <li>
-                <a class="layer3 {{ request()->is('enrichment') ? 'active' : ''}}" href="enrichment">
+                <a class="layer3 {{ request()->is('infoautodebet') ? 'active' : ''}}" href="infoautodebet">
                   <span>Dashboard</span>
                 </a>
               </li>
               <li>
-                <a class="layer3 {{ request()->is('enrichment_history') ? 'active' : ''}}" href="cek_enrichment">
+                <a class="layer3 {{ request()->is('infoautodebet_history') ? 'active' : ''}}" href="infoautodebet_history">
                   <span>History</span>
                 </a>
               </li>

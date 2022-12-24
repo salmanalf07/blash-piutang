@@ -24,12 +24,89 @@
 
 <main id="main" class="main">
 
+    <div class="pagetitle">
+        <h1>Dashboard</h1>
+        <nav>
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active">Dashboard</li>
+            </ol>
+        </nav>
+    </div><!-- End Page Title -->
+
     <section class="section dashboard">
         <div class="row">
 
             <!-- Left side columns -->
             <div class="col-lg-12">
                 <div class="row">
+                    <form action="/import_infoautodebet" id="form-import" method="post" enctype="multipart/form-data">
+                        @csrf
+                        <div class="mb-3">
+                            <label for="formFile" class="form-label">Input File Excel</label>
+
+                            <div class="input-group">
+                                <input id="file" type="file" name="file" class="form-control">
+                                <span class="input-group-btn">
+                                    <input type="button" class="btn btn-primary" id="import" value="Import">
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+                    <div class=" mb-3" style="width: fit-content;">
+                        <a class="btn btn-primary" href="download_infoautodebet">Download Template
+                            Excel</a>
+                    </div>
+                    <div class="mb-3" style="width: fit-content;">
+                        <form action="/infoautodebet_clear" id="form-clear" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @forelse ($mahasiswa as $datamaha)
+                            <input type="text" name="mahasiswa[]" value="{{ $datamaha->id }}" hidden>
+                            @empty
+                            <input type="text" name="mahasiswa[]" value="" hidden>
+                            @endforelse
+                            <button id="clear" class="btn btn-danger">Clear Data</button>
+                        </form>
+                    </div>
+
+                    <div class="col-12">
+                        <div class="card ">
+                            <div class="card-body ">
+                                <div class="d-grid gap-2 mt-3">
+                                    <button id="generate" class="btn btn-primary" type="button">Generate</button>
+                                    <div class="modal fade" id="basicModal" tabindex="-1">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Send Email</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <form action="/Blashinfoautodebet" id="form-add" method="post" enctype="multipart/form-data">
+                                                    @csrf
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            @forelse ($mahasiswa as $datamaha)
+                                                            <input type="text" name="mahasiswa[]" value="{{ $datamaha->id }}" hidden>
+                                                            <input type="text" class="form-control" name="subject" placeholder="Subject Email" autocomplete="off">
+                                                            @empty
+                                                            <input type="text" name="mahasiswa[]" value="" hidden>
+                                                            @endforelse
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                                <div class=" modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button id="send" class="btn btn-primary">Send</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
 
                     <!-- Recent Sales -->
                     <div class="col-12">
@@ -58,8 +135,6 @@
                                             <th scope="col">NIM</th>
                                             <th scope="col">Nama</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col">Total Tunggakan</th>
-                                            <th scope="col">Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -70,10 +145,8 @@
                                         <tr>
                                             <th scope="row">{{ ++$no }}</th>
                                             <td>{{ $mahasiswa->nim }}</td>
-                                            <td>{{ $mahasiswa->nama }}</td>
+                                            <td>{{ $mahasiswa->name }}</td>
                                             <td>{{ $mahasiswa->email }}</td>
-                                            <td>{{ $mahasiswa->total }}</td>
-                                            <td>{{ $mahasiswa->total }}</td>
                                         </tr>
                                         @empty
                                         <td colspan="6" class="table-active text-center">Data Empty</td>
