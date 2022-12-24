@@ -20,7 +20,7 @@ class CreateAutodebetsTable extends Migration
             $table->string('semester');
             $table->date('tgl_batas');
             $table->string('biaya');
-            $table->string('status')->default(null);
+            $table->string('status')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });
