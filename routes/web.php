@@ -4,10 +4,12 @@ use App\Http\Controllers\BlashController;
 use App\Http\Controllers\BlashMarketing50;
 use App\Http\Controllers\BlashWb2c;
 use App\Http\Controllers\EnrichmentController;
+use App\Http\Controllers\hasilautodebetController;
 use App\Http\Controllers\InfoautodebetController;
 use App\Http\Controllers\ReaktifController;
 use App\Imports\EnrichmentIImport;
 use App\Imports\EnrichmentImport;
+use App\Imports\hasilautodebetImport;
 use App\Imports\infoautodebetImport;
 use App\Imports\MahasiswaImport;
 use App\Imports\ReaktifImport;
@@ -120,11 +122,31 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/infoautodebet', function 
     return view('infoautodebet/dashboard', ['mahasiswa' => $mahasiswa, 'template' => $template]);
 })->name('infoautodebet');
 Route::middleware(['auth:sanctum', 'verified'])->get('/infoautodebet_history', function () {
-    $mahasiswa = autodebet::onlyTrashed()->get();
+    $mahasiswa = autodebet::onlyTrashed()->where('type', 'infoautodebet')->get();
     return view('infoautodebet/history', ['mahasiswa' => $mahasiswa]);
 })->name('infoautodebet_history');
 Route::middleware(['auth:sanctum', 'verified'])->post('/Blashinfoautodebet', [infoautodebetController::class, 'send_mail']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/cek_infoautodebet', [infoautodebetController::class, 'cetak_pdf']);
+//hasilAutodebet
+Route::middleware(['auth:sanctum', 'verified'])->get('/download_hasilautodebet', function () {
+    $filePath = public_path("/assets/excel/HasilautodebetImport.xlsx");
+    return Response::download($filePath);
+})->name('download_hasilautodebet');
+Route::middleware(['auth:sanctum', 'verified'])->post('/import_hasilautodebet', function () {
+    Excel::import(new hasilautodebetImport, request()->file('file'));
+    return back();
+})->name('import_hasilautodebet');
+Route::middleware(['auth:sanctum', 'verified'])->post('/hasilautodebet_clear', [hasilautodebetController::class, 'clear']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/hasilautodebet', function () {
+    $mahasiswa = autodebet::where('type', 'hasilautodebet')->get();
+    $template = Template::all();
+    return view('hasilautodebet/dashboard', ['mahasiswa' => $mahasiswa, 'template' => $template]);
+})->name('hasilautodebet');
+Route::middleware(['auth:sanctum', 'verified'])->get('/hasilautodebet_history', function () {
+    $mahasiswa = autodebet::onlyTrashed()->where('type', 'hasilautodebet')->get();
+    return view('hasilautodebet/history', ['mahasiswa' => $mahasiswa]);
+})->name('hasilautodebet_history');
+Route::middleware(['auth:sanctum', 'verified'])->post('/Blashhasilautodebet', [hasilautodebetController::class, 'send_mail']);
 //marketing50
 Route::middleware(['auth:sanctum', 'verified'])->get('/marketing50', [BlashMarketing50::class, 'send_mail']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/rendermarketing50', [BlashMarketing50::class, 'cetak_pdf']);
