@@ -14,18 +14,18 @@
         function getRomawi($tanggal)
         {
             $bulan = array(
-                1 =>   'Januari',
-                'Februari',
-                'Maret',
-                'April',
-                'Mei',
-                'Juni',
-                'Juli',
-                'Agustus',
-                'September',
-                'Oktober',
-                'November',
-                'Desember'
+                1 =>   'JANUARI',
+                'FEBRUARI',
+                'MARET',
+                'APRIL',
+                'MEI',
+                'JUNI',
+                'JULI',
+                'AGUSTUS',
+                'SEPTEMBER',
+                'OKTOBER',
+                'NOVEMBER',
+                'DESEMBER'
             );
 
             $pecahkan = explode('-', $tanggal);
@@ -60,7 +60,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3">Jumlah tagihan dapat dilihat di <a href="http://binusmaya.binus.ac.id">http://binusmaya.binus.ac.id</a> pada :</td>
+                <td colspan="3">Jumlah tagihan dapat dilihat pada BINUS Mobile dan website <a href="http://binusmaya.binus.ac.id">http://binusmaya.binus.ac.id</a> pada :</td>
             </tr>
             <tr>
                 <td>·</td>
@@ -81,7 +81,9 @@
                 <td>·</td>
                 <td colspan="2">menu Message pilih Inbox (status gagal)</td>
             </tr>
-            <br>
+            <tr>
+                <td colspan="3"><br></td>
+            </tr>
             <tr>
                 <td colspan="3">Apabila terdapat pertanyaan lebih lanjut dapat menghubungi Student Services Center BINUS @Bekasi melalui Channel di bawah ini.</td>
             </tr>
@@ -131,7 +133,7 @@
                 <td colspan="3">Best Regards,</td>
             </tr>
             <tr>
-                <td colspan="3">Student Services BINUS@Bekasi</td>
+                <td colspan="3">Student Services BINUS @Bekasi</td>
             </tr>
         </tbody>
     </table>

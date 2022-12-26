@@ -14,18 +14,18 @@
         function getRomawi($tanggal)
         {
             $bulan = array(
-                1 =>   'Januari',
-                'Februari',
-                'Maret',
-                'April',
-                'Mei',
-                'Juni',
-                'Juli',
-                'Agustus',
-                'September',
-                'Oktober',
-                'November',
-                'Desember'
+                1 =>   'JANUARI',
+                'FEBRUARI',
+                'MARET',
+                'APRIL',
+                'MEI',
+                'JUNI',
+                'JULI',
+                'AGUSTUS',
+                'SEPTEMBER',
+                'OKTOBER',
+                'NOVEMBER',
+                'DESEMBER'
             );
 
             $pecahkan = explode('-', $tanggal);
@@ -38,7 +38,7 @@
     <table>
         <tbody>
             <tr>
-                <td colspan="3">Dear Binusian,</td>
+                <td colspan="3"><b>Dear Binusian,</b></td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -46,7 +46,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3">Hasil auto debet biaya kuliah Semester {{$semester}} berupa <b>Biaya {{$biaya}}</b> serta pembayaran semester sebelumnya yang belum diselesaikan (Jika ada), <b>TIDAK BERHASIL</b> dengan Status <b> "SALDO TIDAK CUKUP"</b>.</td>
+                <td colspan="3">Hasil auto debet biaya kuliah <b>Semester {{$semester}}</b> berupa <b>Biaya {{$biaya}}</b> serta pembayaran semester sebelumnya yang belum diselesaikan (Jika ada), <b>TIDAK BERHASIL</b> dengan Status "<b>SALDO TIDAK CUKUP</b>".</td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -54,7 +54,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3">Bagi mahasiswa yang status tagihannya <b>"BELUM LUNAS"</b> maka diberikan kesempatan untuk dapat di-auto debet pada tanggal <b><?php echo getRomawi($tgl_batas) ?></b>.</td>
+                <td colspan="3">Bagi mahasiswa yang status tagihannya "<b>BELUM LUNAS</b>" maka diberikan kesempatan untuk dapat di-auto debet pada <b><?php echo getRomawi($tgl_batas) ?></b>.</td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -62,7 +62,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="3">Detail jumlah tagihan dapat dilihat pada website <a href="https://binusmaya.binus.ac.id/">https://binusmaya.binus.ac.id/</a> pada menu Financial - Financial Summary.</td>
+                <td colspan="3">Detail jumlah tagihan dapat dilihat pada BINUS Mobile for Student/Parent dan website <a href="https://binusmaya.binus.ac.id/">https://binusmaya.binus.ac.id/</a> pada menu Financial - Financial Summary.</td>
             </tr>
             <tr>
                 <td colspan="3">
@@ -118,7 +118,7 @@
                 <td colspan="3">Best Regards,</td>
             </tr>
             <tr>
-                <td colspan="3">Student Services BINUS@Bekasi</td>
+                <td colspan="3">Student Services BINUS @Bekasi</td>
             </tr>
         </tbody>
     </table>
