@@ -124,11 +124,12 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
+      <?php $link = ['reaktif', 'reak_history', 'infoautodebet', 'infoautodebet_history', 'hasilautodebet', 'hasilautodebet_history']; ?>
       <li class="nav-item">
-        <a class="nav-link {{ request()->is('reaktif','reak_history','infoautodebet','infoautodebet_history','hasilautodebet','hasilautodebet_history') ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
+        <a class="nav-link {{ request()->is($link) ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Blash</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
-        <ul id="components-nav" class="nav-content collapse {{ request()->is('reaktif','reak_history','infoautodebet','infoautodebet_history','hasilautodebet','hasilautodebet_history') ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
+        <ul id="components-nav" class="nav-content collapse {{ request()->is($link) ? 'show' : ''}}" data-bs-parent="#sidebar-nav">
           <li>
             <a class="nav-link {{ request()->is('reaktif','reak_history') ? 'blue' : 'collapsed'}}" data-bs-target="#reaktif-nav" data-bs-toggle="collapse" href="#">
               <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reaktif</span>
