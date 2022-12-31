@@ -20,6 +20,8 @@ use App\Models\Mahasiswa;
 use App\Models\reaktif;
 use App\Models\Rekening;
 use App\Models\Template;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
@@ -38,7 +40,12 @@ use Maatwebsite\Excel\Facades\Excel;
 Route::get('/', function () {
     return redirect('/login');
 });
-
+//user change
+Route::middleware(['auth:sanctum', 'verified'])->get('/user', function () {
+    $user = User::where('id', Auth::user()->id)->first();
+    return view('user', ['user' => $user]);
+})->name('user');
+//end user
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     $mahasiswa = Mahasiswa::all();
     $rekening = Rekening::all();

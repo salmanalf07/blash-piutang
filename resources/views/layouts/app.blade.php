@@ -1,46 +1,52 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="csrf-token" content="{{ csrf_token() }}">
+@extends('index')
 
-        <title>{{ config('app.name', 'Laravel') }}</title>
 
-        <!-- Fonts -->
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
+@section('konten')
+<link rel="stylesheet" href="{{ mix('css/app.css') }}">
+@livewireStyles
+<!-- Scripts -->
+<script src="{{ mix('js/app.js') }}" defer></script>
+<style>
+    #pageloader {
+        background: rgba(255, 255, 255, 0.8);
+        display: none;
+        height: 100%;
+        top: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 9999;
+    }
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    #pageloader img {
+        left: 50%;
+        margin-left: -32px;
+        margin-top: -32px;
+        position: absolute;
+        top: 50%;
+    }
+</style>
 
-        @livewireStyles
+<main id="main" class="main">
 
-        <!-- Scripts -->
-        <script src="{{ mix('js/app.js') }}" defer></script>
-    </head>
-    <body class="font-sans antialiased">
-        <x-jet-banner />
+    <section class="section dashboard">
+        <div class="row">
 
-        <div class="min-h-screen bg-gray-100">
-            @livewire('navigation-menu')
+            <!-- Left side columns -->
+            <div class="col-lg-12">
+                <div class="row">
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+                    <div class="min-h-screen bg-gray-100">
+                        <main>
+                            {{ $slot }}
+                        </main>
                     </div>
-                </header>
-            @endif
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+                </div>
+            </div><!-- End Left side columns -->
         </div>
+    </section>
 
-        @stack('modals')
-
-        @livewireScripts
-    </body>
-</html>
+</main><!-- End #main -->
+<script src="/assets/js/jquery-3.5.1.js"></script>
+@livewireScripts
+@endsection

@@ -54,6 +54,9 @@
                                 <x-jet-button class="col-12">
                                     {{ __('Log in') }}
                                 </x-jet-button>
+                                <div class="col-12">
+                                    <p class="small mb-0">Don't have account? <a href="/register">Create an account</a></p>
+                                </div>
 
                             </form>
 
