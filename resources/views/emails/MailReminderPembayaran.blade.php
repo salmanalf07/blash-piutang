@@ -64,7 +64,7 @@
     <table>
         <tbody>
             <tr>
-                <td colspan="4" class="bold">Dear Yth. {{$data['name']}} – {{$data['student_id']}},</td>
+                <td colspan="4" class="bold">Yth. {{$data['name']}} – {{$data['student_id']}},</td>
             </tr>
             <tr>
                 <td colspan="4">
@@ -238,7 +238,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">Terlampir prosedur pembayaran manual. Harap sesuaikan penginputan NIM+Kode bayar. Bukti pembayaran dapat dilampirkan melalui Email: <a style="font-style:italic ;" href="mailto:studentservices_bekasi@binus.edu">studentservices_bekasi@binus.edu</a> dengan Subject: <b>Nama_NIM_Jenis Tagihan</b></td>
+                <td colspan="4">Terlampir prosedur pembayaran manual. Harap sesuaikan penginputan NIM+Kode bayar. Bukti pembayaran dapat dilampirkan melalui Email: <a style="font-style:italic;text-decoration:none !important;" href="mailto:studentservices_bekasi@binus.edu">studentservices_bekasi@binus.edu</a> dengan Subject: <b>Nama_NIM_Jenis Tagihan</b></td>
             </tr>
             <tr>
                 <td colspan="4">
