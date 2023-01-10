@@ -124,7 +124,7 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-      <?php $link = ['reaktif', 'reak_history', 'infoautodebet', 'infoautodebet_history', 'hasilautodebet', 'hasilautodebet_history']; ?>
+      <?php $link = ['reaktif', 'reak_history', 'infoautodebet', 'infoautodebet_history', 'hasilautodebet', 'hasilautodebet_history', 'reminderPembayaran', 'reminderPembayaran_history']; ?>
       <li class="nav-item">
         <a class="nav-link {{ request()->is($link) ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Blash</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -176,6 +176,23 @@
               </li>
               <li>
                 <a class="layer3 {{ request()->is('hasilautodebet_history') ? 'active' : ''}}" href="/hasilautodebet_history">
+                  <span>History</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link {{ request()->is('reminderPembayaran','reminderPembayaran_history') ? 'blue' : 'collapsed'}}" data-bs-target="#reminderPembayaran-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reminder Pembayaran</span>
+            </a>
+            <ul id="reminderPembayaran-nav" class="nav-content collapse {{ request()->is('reminderPembayaran','reminderPembayaran_history') ? 'show' : ''}}">
+              <li>
+                <a class="layer3 {{ request()->is('reminderPembayaran') ? 'active' : ''}}" href="/reminderPembayaran">
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="layer3 {{ request()->is('reminderPembayaran_history') ? 'active' : ''}}" href="/reminderPembayaran_history">
                   <span>History</span>
                 </a>
               </li>

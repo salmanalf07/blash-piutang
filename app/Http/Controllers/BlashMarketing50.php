@@ -12,7 +12,7 @@ class BlashMarketing50 extends Controller
     public function send_mail(Request $request)
     {
 
-        for ($count = 172; $count <= 172; $count++) {
+        for ($count = 204; $count <= 1807; $count++) {
 
             $base = marketing50::where(['id' => $count]);
             // $base->update([
@@ -24,7 +24,7 @@ class BlashMarketing50 extends Controller
             SendMailMarketing50::dispatch($data);
         }
 
-        return redirect('/reaktif');
+        return redirect('/dashboard');
         //return $pdf->stream();
         //dd('Mail sent successfully');
         //return $pdf->download($data->nim . '-pdf');

@@ -7,18 +7,21 @@ use App\Http\Controllers\EnrichmentController;
 use App\Http\Controllers\hasilautodebetController;
 use App\Http\Controllers\InfoautodebetController;
 use App\Http\Controllers\ReaktifController;
+use App\Http\Controllers\reminderPembayaranController;
 use App\Imports\EnrichmentIImport;
 use App\Imports\EnrichmentImport;
 use App\Imports\hasilautodebetImport;
 use App\Imports\infoautodebetImport;
 use App\Imports\MahasiswaImport;
 use App\Imports\ReaktifImport;
+use App\Imports\reminderPembayaranImport;
 use App\Models\autodebet;
 use App\Models\enrichment;
 use App\Models\Kemahasiswaan;
 use App\Models\Mahasiswa;
 use App\Models\reaktif;
 use App\Models\Rekening;
+use App\Models\reminderPembayaran;
 use App\Models\Template;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
@@ -154,6 +157,26 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/hasilautodebet_history', 
     return view('hasilautodebet/history', ['mahasiswa' => $mahasiswa]);
 })->name('hasilautodebet_history');
 Route::middleware(['auth:sanctum', 'verified'])->post('/Blashhasilautodebet', [hasilautodebetController::class, 'send_mail']);
+//reminderPembayaran
+Route::middleware(['auth:sanctum', 'verified'])->get('/download_reminderPembayaran', function () {
+    $filePath = public_path("/assets/excel/reminderPembayaranImport.xlsx");
+    return Response::download($filePath);
+})->name('download_reminderPembayaran');
+Route::middleware(['auth:sanctum', 'verified'])->post('/import_reminderPembayaran', function () {
+    Excel::import(new reminderPembayaranImport, request()->file('file'));
+    return back();
+})->name('import_reminderPembayaran');
+Route::middleware(['auth:sanctum', 'verified'])->post('/reminderPembayaran_clear', [reminderPembayaranController::class, 'clear']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/reminderPembayaran', function () {
+    $mahasiswa = reminderPembayaran::all();
+    $template = Template::all();
+    return view('reminderPembayaran/dashboard', ['mahasiswa' => $mahasiswa, 'template' => $template]);
+})->name('reminderPembayaran');
+Route::middleware(['auth:sanctum', 'verified'])->get('/reminderPembayaran_history', function () {
+    $mahasiswa = reminderPembayaran::onlyTrashed()->get();
+    return view('reminderPembayaran/history', ['mahasiswa' => $mahasiswa]);
+})->name('reminderPembayaran_history');
+Route::middleware(['auth:sanctum', 'verified'])->post('/BlashreminderPembayaran', [reminderPembayaranController::class, 'send_mail']);
 //marketing50
 Route::middleware(['auth:sanctum', 'verified'])->get('/marketing50', [BlashMarketing50::class, 'send_mail']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/rendermarketing50', [BlashMarketing50::class, 'cetak_pdf']);
