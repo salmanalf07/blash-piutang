@@ -118,7 +118,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/cek_enrichment', [Enrichm
 Route::middleware(['auth:sanctum', 'verified'])->get('/w2bc', [BlashWb2c::class, 'send_mail']);
 //infoautodebet
 Route::middleware(['auth:sanctum', 'verified'])->get('/download_infoautodebet', function () {
-    $filePath = public_path("/assets/excel/infoautodebetImport.xlsx");
+    $filePath = public_path("/assets/excel/InfoautodebetImport.xlsx");
     return Response::download($filePath);
 })->name('download_infoautodebet');
 Route::middleware(['auth:sanctum', 'verified'])->post('/import_infoautodebet', function () {
