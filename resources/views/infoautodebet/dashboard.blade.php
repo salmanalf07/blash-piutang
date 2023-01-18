@@ -85,9 +85,9 @@
                                                     @csrf
                                                     <div class="modal-body">
                                                         <div class="form-group">
+                                                            <input type="text" class="form-control" name="subject" placeholder="Subject Email" autocomplete="off">
                                                             @forelse ($mahasiswa as $datamaha)
                                                             <input type="text" name="mahasiswa[]" value="{{ $datamaha->id }}" hidden>
-                                                            <input type="text" class="form-control" name="subject" placeholder="Subject Email" autocomplete="off">
                                                             @empty
                                                             <input type="text" name="mahasiswa[]" value="" hidden>
                                                             @endforelse
