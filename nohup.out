@@ -2,3 +2,145 @@
 [32m[2022-05-20 14:59:58][124] Processed: [39m App\Jobs\SendMailJob
 [33m[2022-05-20 14:59:57][125] Processing:[39m App\Jobs\SendMailJob
 [32m[2022-05-20 15:00:03][125] Processed: [39m App\Jobs\SendMailJob
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+[2022-12-28 14:33:27][1] Processing: App\Jobs\SendMailInfoAutodebet
+[2022-12-28 14:33:29][1] Processed:  App\Jobs\SendMailInfoAutodebet
+[2022-12-28 15:14:45][2] Processing: App\Jobs\SendMailInfoAutodebet
+[2022-12-28 15:14:46][2] Processed:  App\Jobs\SendMailInfoAutodebet
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+[2022-12-28 15:18:58][3] Processing: App\Jobs\SendMailInfoAutodebet
+[2022-12-28 15:19:00][3] Processed:  App\Jobs\SendMailInfoAutodebet
+[2022-12-28 15:20:12][4] Processing: App\Jobs\SendMailInfoAutodebet
+[2022-12-28 15:20:12][4] Processed:  App\Jobs\SendMailInfoAutodebet
+[2023-01-10 09:06:27][5] Processing: App\Jobs\SendMailReminderPembayaran
+[2023-01-10 09:06:29][5] Processed:  App\Jobs\SendMailReminderPembayaran
+[2023-01-10 11:40:52][6] Processing: App\Jobs\SendMailReminderPembayaran
+[2023-01-10 11:40:55][6] Processed:  App\Jobs\SendMailReminderPembayaran
+[2023-01-10 13:11:42][7] Processing: App\Jobs\SendMailReminderPembayaran
+[2023-01-10 13:11:44][7] Processed:  App\Jobs\SendMailReminderPembayaran
+[2023-01-10 13:13:35][8] Processing: App\Jobs\SendMailReminderPembayaran
+[2023-01-10 13:13:36][8] Processed:  App\Jobs\SendMailReminderPembayaran
+[2023-01-18 10:14:52][9] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 10:14:57][9] Processed:  App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:17:50][10] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:18:21][10] Failed:     App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:43:10][11] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:44:40][11] Failed:     App\Jobs\SendMailInfoAutodebet
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+[2023-01-18 14:49:59][14] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:50:00][14] Failed:     App\Jobs\SendMailInfoAutodebet
+
+   Symfony\Component\Process\Exception\ProcessSignaledException 
+
+  The process has been signaled with signal "1".
+
+  at vendor/symfony/process/Process.php:441
+    437▕             usleep(1000);
+    438▕         }
+    439▕ 
+    440▕         if ($this->processInformation['signaled'] && $this->processInformation['termsig'] !== $this->latestSignal) {
+  ➜ 441▕             throw new ProcessSignaledException($this);
+    442▕         }
+    443▕ 
+    444▕         return $this->exitcode;
+    445▕     }
+
+      [2m+17 vendor frames [22m
+  18  artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+[2023-01-18 14:54:06][15] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:54:07][15] Processed:  App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:55:15][16] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 14:55:16][16] Processed:  App\Jobs\SendMailInfoAutodebet
+[2023-01-18 15:49:18][17] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 15:49:18][17] Processed:  App\Jobs\SendMailInfoAutodebet
+[2023-01-18 15:49:18][18] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-18 15:49:19][18] Processed:  App\Jobs\SendMailInfoAutodebet
+[2023-01-20 11:38:08][19] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 11:38:09][19] Processed:  App\Jobs\SendMailReminKrs3
+[2023-01-20 11:40:24][20] Processing: App\Jobs\SendMailReminKrs12
+[2023-01-20 11:40:25][20] Processed:  App\Jobs\SendMailReminKrs12
+[2023-01-20 11:40:25][21] Processing: App\Jobs\SendMailReminKrs12
+[2023-01-20 11:40:26][21] Processed:  App\Jobs\SendMailReminKrs12
+[2023-01-20 12:00:42][22] Processing: App\Jobs\SendMailReminKrs12
+[2023-01-20 12:00:43][22] Processed:  App\Jobs\SendMailReminKrs12
+[2023-01-20 12:00:43][23] Processing: App\Jobs\SendMailReminKrs12
+[2023-01-20 12:00:44][23] Processed:  App\Jobs\SendMailReminKrs12
+[2023-01-20 14:28:25][24] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 14:28:26][24] Processed:  App\Jobs\SendMailReminKrs3
+[2023-01-20 14:28:26][25] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 14:28:28][25] Processed:  App\Jobs\SendMailReminKrs3
+[2023-01-20 14:30:07][26] Processing: App\Jobs\SendMailInfoAutodebet
+[2023-01-20 14:30:08][26] Processed:  App\Jobs\SendMailInfoAutodebet
+[2023-01-20 14:30:29][27] Processing: App\Jobs\SendMailhasilAutodebet
+[2023-01-20 14:31:00][27] Failed:     App\Jobs\SendMailhasilAutodebet
+[2023-01-20 15:03:37][28] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 15:05:07][28] Failed:     App\Jobs\SendMailReminKrs3
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+[2023-01-20 16:21:38][29] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 16:21:40][29] Processed:  App\Jobs\SendMailReminKrs3
+[2023-01-20 16:21:40][30] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 16:21:42][30] Processed:  App\Jobs\SendMailReminKrs3
+[2023-01-20 16:21:42][31] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 16:21:44][31] Failed:     App\Jobs\SendMailReminKrs3
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+
+
+                                         
+  The "--daemon" option does not exist.  
+                                         
+

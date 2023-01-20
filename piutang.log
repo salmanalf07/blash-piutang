@@ -1,0 +1,196 @@
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+
+   Error 
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+      [2m+18 vendor frames [22m
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+      [2m+18 vendor frames [22m
+
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+   Error 
+
+  Class 'Aws\Sqs\SqsClient' not found
+
+  at /var/www/blash-piutang/vendor/laravel/framework/src/Illuminate/Queue/Connectors/SqsConnector.php:26
+     22▕             $config['credentials'] = Arr::only($config, ['key', 'secret', 'token']);
+     23▕         }
+     24▕ 
+     25▕         return new SqsQueue(
+  ➜  26▕             new SqsClient($config),
+     27▕             $config['queue'],
+     28▕             $config['prefix'] ?? '',
+     29▕             $config['suffix'] ?? '',
+     30▕             $config['after_commit'] ?? null
+
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+
+      [2m+18 vendor frames [22m
+  19  /var/www/blash-piutang/artisan:37
+      Illuminate\Foundation\Console\Kernel::handle()
+[2023-01-20 17:43:09][41] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 17:43:09][42] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 17:43:12][42] Processed:  App\Jobs\SendMailReminKrs3
+[2023-01-20 17:43:12][41] Processed:  App\Jobs\SendMailReminKrs3
+[2023-01-20 17:45:06][43] Processing: App\Jobs\SendMailReminKrs3
+[2023-01-20 17:45:09][43] Processed:  App\Jobs\SendMailReminKrs3
