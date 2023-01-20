@@ -7,13 +7,17 @@ use App\Http\Controllers\EnrichmentController;
 use App\Http\Controllers\hasilautodebetController;
 use App\Http\Controllers\InfoautodebetController;
 use App\Http\Controllers\ReaktifController;
+use App\Http\Controllers\reminderKrs3Controller;
 use App\Http\Controllers\reminderPembayaranController;
+use App\Http\Controllers\ReminKrsTahap12Controller;
 use App\Imports\EnrichmentIImport;
 use App\Imports\EnrichmentImport;
 use App\Imports\hasilautodebetImport;
 use App\Imports\infoautodebetImport;
 use App\Imports\MahasiswaImport;
 use App\Imports\ReaktifImport;
+use App\Imports\reminderKrs12mport;
+use App\Imports\reminderKrs3mport;
 use App\Imports\reminderPembayaranImport;
 use App\Models\autodebet;
 use App\Models\enrichment;
@@ -21,6 +25,8 @@ use App\Models\Kemahasiswaan;
 use App\Models\Mahasiswa;
 use App\Models\reaktif;
 use App\Models\Rekening;
+use App\Models\reminderKrs12;
+use App\Models\reminderKrs3;
 use App\Models\reminderPembayaran;
 use App\Models\Template;
 use App\Models\User;
@@ -177,6 +183,46 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/reminderPembayaran_histor
     return view('reminderPembayaran/history', ['mahasiswa' => $mahasiswa]);
 })->name('reminderPembayaran_history');
 Route::middleware(['auth:sanctum', 'verified'])->post('/BlashreminderPembayaran', [reminderPembayaranController::class, 'send_mail']);
+//ReminderKrsTahap12
+Route::middleware(['auth:sanctum', 'verified'])->get('/reminderKrs12', function () {
+    $mahasiswa = reminderKrs12::all();
+    $template = Template::all();
+    return view('reminderKrs12/dashboard', ['mahasiswa' => $mahasiswa, 'template' => $template]);
+})->name('reminderKrs12');
+Route::middleware(['auth:sanctum', 'verified'])->get('/reminderKrs12_history', function () {
+    $mahasiswa = reminderKrs12::onlyTrashed()->get();
+    return view('reminderKrs12/history', ['mahasiswa' => $mahasiswa]);
+})->name('reminderKrs12_history');
+Route::middleware(['auth:sanctum', 'verified'])->get('/download_reminderKrs12', function () {
+    $filePath = public_path("/assets/excel/reminderKrs12Import.xlsx");
+    return Response::download($filePath);
+})->name('download_ReminderKrs12');
+Route::middleware(['auth:sanctum', 'verified'])->post('/import_ReminderKrs12', function () {
+    Excel::import(new reminderKrs12mport, request()->file('file'));
+    return back();
+})->name('import_ReminderKrs12');
+Route::middleware(['auth:sanctum', 'verified'])->post('/reminderKrs12_clear', [ReminKrsTahap12Controller::class, 'clear']);
+Route::middleware(['auth:sanctum', 'verified'])->post('/BlashreminderKrs12', [ReminKrsTahap12Controller::class, 'send_mail']);
+//reminderKrs3
+Route::middleware(['auth:sanctum', 'verified'])->get('/reminderKrs3', function () {
+    $mahasiswa = reminderKrs3::all();
+    $template = Template::all();
+    return view('reminderKrs3/dashboard', ['mahasiswa' => $mahasiswa, 'template' => $template]);
+})->name('reminderKrs3');
+Route::middleware(['auth:sanctum', 'verified'])->get('/reminderKrs3_history', function () {
+    $mahasiswa = reminderKrs3::onlyTrashed()->get();
+    return view('reminderKrs3/history', ['mahasiswa' => $mahasiswa]);
+})->name('reminderKrs3_history');
+Route::middleware(['auth:sanctum', 'verified'])->get('/download_reminderKrs3', function () {
+    $filePath = public_path("/assets/excel/reminderKrs3Import.xlsx");
+    return Response::download($filePath);
+})->name('download_reminderKrs3');
+Route::middleware(['auth:sanctum', 'verified'])->post('/import_reminderKrs3', function () {
+    Excel::import(new reminderKrs3mport, request()->file('file'));
+    return back();
+})->name('import_reminderKrs3');
+Route::middleware(['auth:sanctum', 'verified'])->post('/reminderKrs3_clear', [reminderKrs3Controller::class, 'clear']);
+Route::middleware(['auth:sanctum', 'verified'])->post('/BlashreminderKrs3', [reminderKrs3Controller::class, 'send_mail']);
 //marketing50
 Route::middleware(['auth:sanctum', 'verified'])->get('/marketing50', [BlashMarketing50::class, 'send_mail']);
 Route::middleware(['auth:sanctum', 'verified'])->get('/rendermarketing50', [BlashMarketing50::class, 'cetak_pdf']);

@@ -124,7 +124,7 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-      <?php $link = ['reaktif', 'reak_history', 'infoautodebet', 'infoautodebet_history', 'hasilautodebet', 'hasilautodebet_history', 'reminderPembayaran', 'reminderPembayaran_history']; ?>
+      <?php $link = ['reaktif', 'reak_history', 'infoautodebet', 'infoautodebet_history', 'hasilautodebet', 'hasilautodebet_history', 'reminderPembayaran', 'reminderPembayaran_history', 'reminderKrs12', 'reminderKrs12_history', 'reminderKrs3', 'reminderKrs3_history']; ?>
       <li class="nav-item">
         <a class="nav-link {{ request()->is($link) ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Blash</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -176,6 +176,40 @@
               </li>
               <li>
                 <a class="layer3 {{ request()->is('hasilautodebet_history') ? 'active' : ''}}" href="/hasilautodebet_history">
+                  <span>History</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link {{ request()->is('reminderKrs12','reminderKrs12_history') ? 'blue' : 'collapsed'}}" data-bs-target="#reminderKrs12-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>REMINDER KRS 1 & 2</span>
+            </a>
+            <ul id="reminderKrs12-nav" class="nav-content collapse {{ request()->is('reminderKrs12','reminderKrs12_history') ? 'show' : ''}}">
+              <li>
+                <a class="layer3 {{ request()->is('reminderKrs12') ? 'active' : ''}}" href="/reminderKrs12">
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="layer3 {{ request()->is('reminderKrs12_history') ? 'active' : ''}}" href="/reminderKrs12_history">
+                  <span>History</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link {{ request()->is('reminderKrs3','reminderKrs3_history') ? 'blue' : 'collapsed'}}" data-bs-target="#reminderKrs3-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>REMINDER KRS 3</span>
+            </a>
+            <ul id="reminderKrs3-nav" class="nav-content collapse {{ request()->is('reminderKrs3','reminderKrs3_history') ? 'show' : ''}}">
+              <li>
+                <a class="layer3 {{ request()->is('reminderKrs3') ? 'active' : ''}}" href="/reminderKrs3">
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="layer3 {{ request()->is('reminderKrs3_history') ? 'active' : ''}}" href="/reminderKrs3_history">
                   <span>History</span>
                 </a>
               </li>
