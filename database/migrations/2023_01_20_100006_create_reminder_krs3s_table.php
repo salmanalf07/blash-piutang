@@ -21,7 +21,7 @@ class CreateReminderKrs3sTable extends Migration
             $table->string('email');
             $table->string('semester');
             $table->string('date_regist');
-            $table->date('jatem');
+            $table->date('jatem')->nullable();
             $table->string('status')->nullable();
             $table->softDeletes();
             $table->timestamps();
@@ -35,6 +35,6 @@ class CreateReminderKrs3sTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('reminder_krs3');
+        Schema::dropIfExists('reminder_krs3s');
     }
 }
