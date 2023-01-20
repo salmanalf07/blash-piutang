@@ -25,6 +25,7 @@ class reminderKrs3mport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new reminderKrs3([
+            'type' => $row['type'],
             'nim' => $row['nim'],
             'name' => $row['name'],
             'email' => $row['email'],

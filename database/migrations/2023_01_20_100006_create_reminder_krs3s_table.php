@@ -15,6 +15,7 @@ class CreateReminderKrs3sTable extends Migration
     {
         Schema::create('reminder_krs3s', function (Blueprint $table) {
             $table->id();
+            $table->string('type');
             $table->string('nim');
             $table->string('name');
             $table->string('email');

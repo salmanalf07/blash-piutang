@@ -54,6 +54,7 @@
             <tr>
                 <td colspan="3">Kami informasikan bahwa <b style="text-decoration: underline;">KAMU TIDAK MENGISI KRSS</b>, oleh karena itu kami himbau untuk <b>Registrasi KRS Tahap 3</b> Semester {{$data['semester']}} yang akan berlangsung pada tanggal {{$data['date_regist']}}.</td>
             </tr>
+            @if($data['type'] == 1)
             <tr>
                 <td colspan="3">
                     <br>
@@ -62,6 +63,7 @@
             <tr>
                 <td colspan="3">(Detail Cara Registrasi KRS Tahap 3 Terlampir)</td>
             </tr>
+            @endif
             <tr>
                 <td colspan="3">
                     <br>
@@ -75,19 +77,47 @@
                     <br>
                 </td>
             </tr>
+            @if($data['type'] == 1)
             <tr>
                 <td colspan="3">Pembayaran secara <b>AUTODEBET KEBIJAKAN PADA TANGGAL {{getRomawi($data['jatem'])}}.</b> Simpan dana di rekening maksimal H-1.</td>
             </tr>
             <tr>
-                <td colspan="3">
-                    <br>
-                </td>
+                <td colspan="3"><br></td>
             </tr>
             <tr>
-                <td colspan="3">Bagi kamu yang tidak memiliki rekening Autodebet, dapat membayarkan secara transfer manual dengan penginputan NIM+Kode Bayar. Jika terdapat kendala, silakan hubungi Student Services BINUS Bekasi melalui: </td>
+                <td colspan="3">Bagi kamu yang tidak memiliki rekening Autodebet, dapat membayarkan secara transfer manual dengan penginputan NIM+Kode Bayar.</td>
             </tr>
             <tr>
                 <td colspan="3"><br></td>
+            </tr>
+            <tr>
+                <td colspan="3">Sebagai tambahan informasi, setelah berhasil registrasi KRS Tahap 3, kamu wajib membayarkan tagihan Full SKS dalam waktu 1x24 jam secara transfer manual.</td>
+            </tr>
+            @else
+            <tr>
+                <td colspan="3">Pembayaran dilakukan secara Transfer Manual dengan penginputan NIM+Kode Bayar. Lalu kirimkan bukti bayarnya ke Email: <a style="font-style:italic ;" href="mailto:studentservices_bekasi@binus.edu">studentservices_bekasi@binus.edu</a>.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><br></td>
+            </tr>
+            <tr>
+                <td colspan="3">Sebagai tambahan informasi, setelah berhasil registrasi KRS Tahap 3, kamu wajib membayarkan tagihan Full SKS dalam waktu 1x24 jam secara transfer manual.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><br></td>
+            </tr>
+            <tr>
+                <td colspan="3">(Detail Cara Registrasi KRS Tahap 3 dan Transfer Manual Terlampir)</td>
+            </tr>
+            @endif
+
+            <tr>
+                <td colspan="3">
+                    <br><br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3">Jika terdapat kendala, silakan hubungi Student Services Binus Bekasi melalui: </td>
             </tr>
             </tr>
             <tr>

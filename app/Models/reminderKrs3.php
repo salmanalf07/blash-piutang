@@ -11,6 +11,7 @@ class reminderKrs3 extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
+        'type',
         'nim',
         'name',
         'email',
