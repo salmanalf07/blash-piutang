@@ -48,7 +48,7 @@ class SendMailhasilAutodebet implements ShouldQueue
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject'])
-                ->attach(public_path('/assets/file/PENGUMUMAN AD BP3, SKS-1 DAN LAB 2220 (5 JAN 2023).pdf'));
+                ->attach(public_path('/assets/file/PENGUMUMAN AD BP3 SKS-1 DAN LAB 2220 (19 JAN 2023).pdf'));
         });
 
         // check for failures
