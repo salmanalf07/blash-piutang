@@ -38,7 +38,7 @@ class SendMailReminderPembayaran implements ShouldQueue
     {
 
         $dada['email'] = $this->data->email;
-        $dada['subject'] = "[REVISI REMINDER] Peringatan Pembayaran";
+        $dada['subject'] = "[REVISI] [REMINDER] Peringatan Pembayaran";
 
 
         $dad = $this->data;
