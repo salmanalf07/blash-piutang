@@ -238,7 +238,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">Terlampir prosedur pembayaran manual. Harap sesuaikan penginputan NIM+Kode bayar.Kode bayar BP3 dan Daftar Ulang adalah 21. Kode bayar SKS dan Lab adalah 22. Kode bayar Textbook adalah 23.</td>
+                <td colspan="4">Terlampir prosedur pembayaran manual. Harap sesuaikan penginputan NIM+Kode bayar. Kode bayar BP3 dan Daftar Ulang adalah 21. Kode bayar SKS dan Lab adalah 22. Kode bayar Textbook adalah 23.</td>
             </tr>
             <tr>
                 <td colspan="4">
