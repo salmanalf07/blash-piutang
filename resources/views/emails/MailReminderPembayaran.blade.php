@@ -238,12 +238,18 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">Terlampir prosedur pembayaran manual. Harap sesuaikan penginputan NIM+Kode bayar. Bukti pembayaran dapat dilampirkan melalui Email: <a style="font-style:italic;text-decoration:none !important;" href="mailto:studentservices_bekasi@binus.edu">studentservices_bekasi@binus.edu</a> dengan Subject: <b>Nama_NIM_Jenis Tagihan</b></td>
+                <td colspan="4">Terlampir prosedur pembayaran manual. Harap sesuaikan penginputan NIM+Kode bayar.Kode bayar BP3 dan Daftar Ulang adalah 21. Kode bayar SKS dan Lab adalah 22. Kode bayar Textbook adalah 23.</td>
             </tr>
             <tr>
                 <td colspan="4">
                     <br>
                 </td>
+            </tr>
+            <tr>
+                <td colspan="4">Bukti pembayaran dapat dilampirkan melalui Email: <a style="font-style:italic;text-decoration:none !important;" href="mailto:studentservices_bekasi@binus.edu">studentservices_bekasi@binus.edu</a> dengan Subject: <b>Nama_NIM_Jenis Tagihan</b></td>
+            </tr>
+            <tr>
+                <td colspan="4"><br></td>
             </tr>
             <tr>
                 <td colspan="4">Jika ada pertanyaan lebih lanjut, silakan menghubungi Student Services melalui Layanan Onsite Lt.1 BINUS Bekasi atau Zoom - Meeting ID: 984 236 9396.</td>
