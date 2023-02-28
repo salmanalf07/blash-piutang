@@ -14,6 +14,8 @@ class reminderPembayaran extends Model
         'name',
         'student_id',
         'email',
+        'email_cc1',
+        'email_cc2',
         'semester_now',
         'jatem',
         'i_tambahan',

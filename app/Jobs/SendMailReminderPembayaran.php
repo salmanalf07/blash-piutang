@@ -38,7 +38,9 @@ class SendMailReminderPembayaran implements ShouldQueue
     {
 
         $dada['email'] = $this->data->email;
-        $dada['subject'] = "[REVISI] [REMINDER] Peringatan Pembayaran";
+        $dada['cc1'] = $this->data->email_cc1;
+        $dada['cc2'] = $this->data->email_cc2;
+        $dada['subject'] = "[REMINDER] Peringatan Pembayaran";
 
 
         $dad = $this->data;
@@ -48,6 +50,15 @@ class SendMailReminderPembayaran implements ShouldQueue
             $message->to($dada['email'])
                 ->subject($dada['subject'])
                 ->attach(public_path('/assets/file/Reminder-Pembayaran.jpg'));
+            if ($dada['cc1'] != null) {
+                $message->cc([$dada['cc1']]);
+            }
+            if ($dada['cc2'] != null) {
+                $message->cc([$dada['cc2']]);
+            }
+            if ($dada['cc1'] != null && $dada['cc2'] != null) {
+                $message->cc([$dada['cc1'], $dada['cc2']]);
+            }
         });
 
 

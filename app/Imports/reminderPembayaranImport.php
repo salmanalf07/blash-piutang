@@ -39,6 +39,8 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'name' => $row['name'],
                 'student_id' => $row['student_id'],
                 'email' => $row['email'],
+                'email_cc1' => $row['email_cc1'],
+                'email_cc2' => $row['email_cc2'],
                 'semester_now' => $row['semester_now'],
                 'jatem' => $this->transformDate($row['jatem_pelunasan']),
                 'i_tambahan' => $row['info_tambahan'],
