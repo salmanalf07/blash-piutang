@@ -25,8 +25,8 @@ class reminderPembayaranController extends Controller
 
     public function send_mail(Request $request)
     {
-        // $dada = reminderPembayaran::with('detReminPem1', 'detReminPem2')->find(13);
-        // return view('emails/MailReminderPembayaran', $dada);
+        // $dada = reminderPembayaran::with('detReminPem1', 'detReminPem2')->find(38);
+        // return view('emails/MailReminderPembayaran', ["data" => $dada]);
         // return $dada;
         for ($count = 0; $count < count($request->mahasiswa); $count++) {
 
@@ -42,11 +42,5 @@ class reminderPembayaranController extends Controller
         }
 
         return redirect('/reminderPembayaran');
-        //return $pdf->stream();
-        //dd('Mail sent successfully');
-        //return $pdf->download($data->nim . '-pdf');
-
-        //return back();
-        // <img src="{{$image->embed(public_path('/assets/file/Reminder-Pembayaran.jpg'))}}">
     }
 }

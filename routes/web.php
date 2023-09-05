@@ -6,6 +6,7 @@ use App\Http\Controllers\BlashWb2c;
 use App\Http\Controllers\EnrichmentController;
 use App\Http\Controllers\hasilautodebetController;
 use App\Http\Controllers\InfoautodebetController;
+use App\Http\Controllers\OutlookInvController;
 use App\Http\Controllers\ReaktifController;
 use App\Http\Controllers\reminderKrs3Controller;
 use App\Http\Controllers\reminderPembayaranController;

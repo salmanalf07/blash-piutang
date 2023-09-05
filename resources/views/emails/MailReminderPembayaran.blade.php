@@ -230,7 +230,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">Diharapkan tagihan di atas dapat segera dilunasi selambatnya tanggal <b>{{getRomawi($data["jatem"])}}.</b> Apabila sampai dengan batas waktu tersebut masih belum dapat memenuhi kewajiban{{ $data["i_tambahan"] ? ',' : '.'}} <b>{{ $data["i_tambahan"] ? $data["i_tambahan"].'.' :''}}</b></td>
+                <td colspan="4"><?php echo $data["i_tambahan"] ? $data["i_tambahan"] . '.' : '' ?></td>
             </tr>
             <tr>
                 <td colspan="4">
@@ -238,7 +238,15 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4">Terlampir prosedur pembayaran manual. Harap sesuaikan penginputan NIM+Kode bayar. Kode bayar BP3 dan Daftar Ulang adalah 21. Kode bayar SKS dan Lab adalah 22. Kode bayar Textbook adalah 23.</td>
+                <td colspan="4"><?php echo $data["i_tambahan_1"] ? $data["i_tambahan_1"] . '.' : '' ?></td>
+            </tr>
+            <tr>
+                <td colspan="4">
+                    <br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4" class="bold">Pembayaran melalui Virtual Account BCA: 12007+1+NIM. (Contoh: 1200712601234567)</td>
             </tr>
             <tr>
                 <td colspan="4">
@@ -255,10 +263,19 @@
                 <td colspan="4">Jika ada pertanyaan lebih lanjut, silakan menghubungi Student Services melalui Layanan Onsite Lt.1 BINUS Bekasi atau Zoom - Meeting ID: 984 236 9396.</td>
             </tr>
             <tr>
-                <td colspan="3"><br><br></td>
+                <td colspan="3"><br></td>
+            </tr>
+            <tr>
+                <td colspan="3">Terima kasih.</td>
+            </tr>
+            <tr>
+                <td colspan="3"><br></td>
             </tr>
             <tr>
                 <td colspan="3">Salam,</td>
+            </tr>
+            <tr>
+                <td colspan="3"><br></td>
             </tr>
             <tr>
                 <td colspan="3" class="bold">Student Service Center</td>

@@ -19,6 +19,7 @@ class reminderPembayaran extends Model
         'semester_now',
         'jatem',
         'i_tambahan',
+        'i_tambahan_1',
         'status',
     ];
 

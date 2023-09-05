@@ -43,7 +43,8 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'email_cc2' => $row['email_cc2'],
                 'semester_now' => $row['semester_now'],
                 'jatem' => $this->transformDate($row['jatem_pelunasan']),
-                'i_tambahan' => $row['info_tambahan'],
+                'i_tambahan' => $row['info_tambahan_1'],
+                'i_tambahan_1' => $row['info_tambahan_2'],
             ]);
 
             detReminPemb1::create([
