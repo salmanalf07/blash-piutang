@@ -152,6 +152,14 @@
                 <td class="border right">{{number_format($data["detReminPem2"][0]["sisaBuku"])}}</td>
             </tr>
             @endif
+            @if ($data["detReminPem2"][0]["beelinguaFee"])
+            <tr class="table center">
+                <td class="border">Semester {{$data["detReminPem2"][0]["semester"]}}</td>
+                <td class="border">Beelingua Fee</td>
+                <td class="border">{{getRomawi($data["detReminPem2"][0]["jatemBeelingua"])}}</td>
+                <td class="border right">{{number_format($data["detReminPem2"][0]["beelinguaFee"])}}</td>
+            </tr>
+            @endif
             @if ($data["detReminPem1"][0]["sisaBP3"])
             <tr class="table center">
                 <td class="border">Semester {{$data["detReminPem1"][0]["semester"]}}</td>
@@ -214,6 +222,14 @@
                 <td class="border">Buku</td>
                 <td class="border">{{getRomawi($data["detReminPem1"][0]["jatemBuku"])}}</td>
                 <td class="border right">{{number_format($data["detReminPem1"][0]["sisaBuku"])}}</td>
+            </tr>
+            @endif
+            @if ($data["detReminPem1"][0]["beelinguaFee"])
+            <tr class="table center">
+                <td class="border">Semester {{$data["detReminPem1"][0]["semester"]}}</td>
+                <td class="border">Beelingua Fee</td>
+                <td class="border">{{getRomawi($data["detReminPem1"][0]["jatemBeelingua"])}}</td>
+                <td class="border right">{{number_format($data["detReminPem1"][0]["beelinguaFee"])}}</td>
             </tr>
             @endif
             <tr>

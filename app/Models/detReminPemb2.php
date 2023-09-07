@@ -21,6 +21,7 @@ class detReminPemb2 extends Model
         'sisaAlat',
         'sisaLab',
         'sisaBuku',
+        'beelinguaFee',
         'totalTunggakan',
         'jatemBP3',
         'jatemFPU',
@@ -30,5 +31,6 @@ class detReminPemb2 extends Model
         'jatemAlat',
         'jatemLab',
         'jatemBuku',
+        'jatemBeelingua'
     ];
 }

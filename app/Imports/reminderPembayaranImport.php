@@ -58,7 +58,8 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'sisaAlat' => $row['1_sisa_alat'],
                 'sisaLab' => $row['1_sisa_lab'],
                 'sisaBuku' => $row['1_sisa_buku'],
-                'totalTunggakan' => $row['1_sisa_bp3'] + $row['1_sisa_fpu'] + $row['1_sisa_sks_1'] + $row['1_sisa_sks_2'] + $row['1_sisa_dp3'] + $row['1_sisa_alat'] + $row['1_sisa_lab'] + $row['1_sisa_buku'],
+                'beelinguaFee' => $row['1_beelingua_fee'],
+                'totalTunggakan' => $row['1_sisa_bp3'] + $row['1_sisa_fpu'] + $row['1_sisa_sks_1'] + $row['1_sisa_sks_2'] + $row['1_sisa_dp3'] + $row['1_sisa_alat'] + $row['1_sisa_lab'] + $row['1_sisa_buku'] + $row['1_beelingua_fee'],
                 'jatemBP3' => $this->transformDate($row['1_jatem_bp3']),
                 'jatemFPU' => $this->transformDate($row['1_jatem_fpu']),
                 'jatemSKS-1' => $this->transformDate($row['1_jatem_sks_1']),
@@ -67,6 +68,7 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'jatemAlat' => $this->transformDate($row['1_jatem_alat']),
                 'jatemLab' => $this->transformDate($row['1_jatem_lab']),
                 'jatemBuku' => $this->transformDate($row['1_jatem_buku']),
+                'jatemBeelingua' => $this->transformDate($row['1_jatem_beelingua']),
             ]);
 
             detReminPemb2::create([
@@ -80,7 +82,8 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'sisaAlat' => $row['2_sisa_alat'],
                 'sisaLab' => $row['2_sisa_lab'],
                 'sisaBuku' => $row['2_sisa_buku'],
-                'totalTunggakan' => $row['2_sisa_bp3'] + $row['2_sisa_fpu'] + $row['2_sisa_sks_1'] + $row['2_sisa_sks_2'] + $row['2_sisa_dp3'] + $row['2_sisa_alat'] + $row['2_sisa_lab'] + $row['2_sisa_buku'],
+                'beelinguaFee' => $row['2_beelingua_fee'],
+                'totalTunggakan' => $row['2_sisa_bp3'] + $row['2_sisa_fpu'] + $row['2_sisa_sks_1'] + $row['2_sisa_sks_2'] + $row['2_sisa_dp3'] + $row['2_sisa_alat'] + $row['2_sisa_lab'] + $row['2_sisa_buku'] + $row['2_beelingua_fee'],
                 'jatemBP3' => $this->transformDate($row['2_jatem_bp3']),
                 'jatemFPU' => $this->transformDate($row['2_jatem_fpu']),
                 'jatemSKS-1' => $this->transformDate($row['2_jatem_sks_1']),
@@ -89,6 +92,7 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'jatemAlat' => $this->transformDate($row['2_jatem_alat']),
                 'jatemLab' => $this->transformDate($row['2_jatem_lab']),
                 'jatemBuku' => $this->transformDate($row['2_jatem_buku']),
+                'jatemBeelingua' => $this->transformDate($row['2_jatem_beelingua']),
             ]);
         }
     }
