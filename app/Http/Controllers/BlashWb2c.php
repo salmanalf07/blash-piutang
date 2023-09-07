@@ -13,7 +13,7 @@ class BlashWb2c extends Controller
     public function send_mail(Request $request)
     {
 
-        for ($count = 1; $count <= 1079; $count++) {
+        for ($count = 1806; $count <= 1806; $count++) {
 
             $base = w2bcModel::where(['id' => $count]);
             // $base->update([
@@ -26,9 +26,8 @@ class BlashWb2c extends Controller
         }
 
         return redirect('/reaktif');
-        //return $pdf->stream();
-        //dd('Mail sent successfully');
-        //return $pdf->download($data->nim . '-pdf');
+
+        // return view('emails.MailW2bc');
 
         //return back();
     }

@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        table,
+        /* table,
         tr,
         td {
             border: 1px solid black;
             border-collapse: collapse;
-        }
+        } */
 
         .center {
             text-align: center;
@@ -25,83 +25,74 @@
 </head>
 
 <body>
-    <p>HEYWO BINUSIAN!!!</p>
-    <p>
-        Kami ingin mengundang Binusian 2024 & Binusian 2025 untuk mengikuti event
-        Welcome Back to Campus.
-    </p>
-    <p>Berikut detail event Welcome Back to Campus :</br>
-        Tanggal : 20 September - 23 September 2022</br>
-        Tempat : BINUS @Bekasi Campus
-    </p>
-    <p>
-        Event ini bersifat WAJIB yaa!!! </br>
-        Jadi jangan sampai kelewatan! </br>
-        Bakal nyesel gabisa Bermain, Bergembira & </br>
-        Bersosialisasi di BINUS Bekasi BEKEN >.< </br>
-            Soalnya WAJIB! HARUS! KUDU! MESTI! ANTI SKIP!
-    </p>
-    <p>
-        DISINI YA JADWALNYA!!! </br>
-        Tiap orang beda-beda jadi harus cek sendiri! mandiri!
-    </p>
-    <p>
-        Jadwal Tiap Kelompok</br>
-        Tanggal : 20 September - 23 September 2022 </br>
-        Nomor Kelompokmu : {{$no_kelompok}}</br>
-        Nama Kelompokmu : {{$nama_kelompok}}</br>
-        Link Group WA mu : {{$link_wa}}</br>
-
-    </p>
-    <p>Cememonial Activities</p>
-    <table style="border:1px solid black ;">
-        <tr>
-            <td class="center bold" style="width: 30% ;">Ceremonial Activities</td>
-            <td class="center bold" style="width: 60%;" colspan="2">Waktu</td>
-        </tr>
-        <tr class="center">
-            <td>Opening Ceremony</td>
-            <td style="width: 30%;">20 September 2022</td>
-            <td style="width: 30%;">Pukul 07:00 WIB</td>
-        </tr>
-        <tr class="center">
-            <td>Closing Ceremony</td>
-            <td>23 September 2022</td>
-            <td>Pukul 15:00 WIB</td>
-        </tr>
-    </table>
-
-    <p>Jadwal Kelas limited seats kelompokmu:</p>
+    <p>Bekasi, 5 September 2023</p>
+    <br>
     <table>
-        <tr class="center">
-            <td style="width: 20%;">Jadwal</td>
-            <td colspan="2" style="width: 25%;">Daebak 대박</td>
-            <td colspan="2" style="width: 25%;">Employee vs Entrepreneur</td>
-            <td colspan="2" style="width: 25%;">Cantik Tulus</td>
-
+        <tr>
+            <td>No</td>
+            <td>:</td>
+            <td>002/BKS/ASD/IX/2023</td>
         </tr>
-        <tr class="center">
-            <td>Hari / Tanggal</td>
-            <td>{{$daebak_tgl}}</td>
-            <td>{{$daebak_jam}}</td>
-            <td>{{$gee_tgl}}</td>
-            <td>{{$gee_jam}}</td>
-            <td>{{$wardah_tgl}}</td>
-            <td>{{$wardah_jam}}</td>
+        <tr>
+            <td>Hal</td>
+            <td>:</td>
+            <td>Undangan Welcome Back to Campus BINUS @Bekasi</td>
         </tr>
-        <tr class="center">
-            <td>Ruangan</td>
-            <td colspan="6">R. 0412</td>
-        </tr>
-
     </table>
-
+    <br>
     <p>
-        Poster 31 Fun Activites : https://bit.ly/funActivitiesWB2C </br>
-        Informasi lainnya : https://bit.ly/WB2CBekasi
-
+        Kepada <br>
+        Mahasiswa/i BINUS @Bekasi <br>
+        Di Tempat
     </p>
-    <p>See ya’ll soon</p>
+    <br>
+    <p>
+        Salam BEKEN dan Asyik. Pada kesempatan ini, BINUS @Bekasi mengundang seluruh mahasiswa/i BINUS@Bekasi untuk dapat hadir pada acara <i>Welcome Back to Campus 2023</i>.
+    </p>
+    <br>
+    <p>
+        Adapun kegiatan ini akan dilaksanakan :
+    </p>
+    <table>
+        <tr>
+            <td style="width: 15%;"></td>
+            <td style="width: 5%;"></td>
+        </tr>
+        <tr>
+            <td>Tanggal</td>
+            <td>:</td>
+            <td>9 September 2023</td>
+        </tr>
+        <tr>
+            <td>Tempat</td>
+            <td>:</td>
+            <td>BINUS @Bekasi</td>
+        </tr>
+        <tr>
+            <td>Waktu</td>
+            <td>:</td>
+            <td>Jam 09.00 – 17.00 WIB (Area Lantai 1, MMG dan 412)</td>
+        </tr>
+    </table>
+    <p>
+        Tujuan dari kegiatan ini untuk menyambut perkuliahan Semester Ganjil yang akan dimulai pada tanggal 11 September 2023.  Dan tema pada tahun ini adalah Chat-Care-Chill. Detail kegiatan dapat di lihat pada Instagram ASD:
+    <h2>asd.binus</h2>
+    </p>
+    <br>
+    <p>
+        Saya berharap, seluruh mahasiswa/i Binusian dapat hadir mengikuti kegiatan ini dengan sukacita. Demikian yang dapat saya sampaikan. Terima kasih.
+    </p>
+    <br>
+    <p>
+        Hormat Kami
+    </p>
+    <br>
+    <p>
+        Dr. Sevenpri Candra <br>
+        Deputy Campus Director - Academic & Student Development <br>
+        BINUS @Bekasi Campus
+    </p>
+
 
 </body>
 

@@ -222,7 +222,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4" class="bold">*Informasi detail tagihan dapat dilihat pada Binusmaya/BIMOB > Finance > Finance Summary</td>
+                <td colspan="4" class="bold">*Informasi detail tagihan dapat dilihat pada Binusmaya/BINUS Mobile > Finance > Finance Summary</td>
             </tr>
             <tr>
                 <td colspan="4">
@@ -230,7 +230,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4"><?php echo $data["i_tambahan"] ? $data["i_tambahan"] . '.' : '' ?></td>
+                <td colspan="4"><?php echo $data["i_tambahan"] ? $data["i_tambahan"] : '' ?></td>
             </tr>
             <tr>
                 <td colspan="4">
@@ -238,7 +238,7 @@
                 </td>
             </tr>
             <tr>
-                <td colspan="4"><?php echo $data["i_tambahan_1"] ? $data["i_tambahan_1"] . '.' : '' ?></td>
+                <td colspan="4"><?php echo $data["i_tambahan_1"] ? $data["i_tambahan_1"]  : '' ?></td>
             </tr>
             <tr>
                 <td colspan="4">

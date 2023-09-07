@@ -53,7 +53,7 @@ class SendMailW2bc implements ShouldQueue
         //end
 
 
-        $dada['subject'] = "Undangan Welcome Back to Campus BINUS @Bekasi B24 & B25 DAY 2";
+        $dada['subject'] = "Undangan Welcome to Back Campus BINUS@Bekasi";
         $dada['nim'] = $this->data->nim;
         $dada['name'] = $this->data->name;
         $dada['no_kelompok'] = $this->data->no_kelompok;
@@ -68,7 +68,7 @@ class SendMailW2bc implements ShouldQueue
         $dada['wardah_tgl'] = $this->data->wardah_tgl;
         $dada['wardah_jam'] = $this->data->wardah_jam;
 
-        Mail::send('emails.blashMail2', $dada, function ($message) use ($dada) {
+        Mail::send('emails.MailW2bc', $dada, function ($message) use ($dada) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject']);

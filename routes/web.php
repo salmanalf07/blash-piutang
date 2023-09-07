@@ -225,5 +225,5 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/import_reminderKrs3', fu
 Route::middleware(['auth:sanctum', 'verified'])->post('/reminderKrs3_clear', [reminderKrs3Controller::class, 'clear']);
 Route::middleware(['auth:sanctum', 'verified'])->post('/BlashreminderKrs3', [reminderKrs3Controller::class, 'send_mail']);
 //marketing50
-Route::middleware(['auth:sanctum', 'verified'])->get('/marketing50', [BlashMarketing50::class, 'send_mail']);
-Route::middleware(['auth:sanctum', 'verified'])->get('/rendermarketing50', [BlashMarketing50::class, 'cetak_pdf']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/w2bc', [BlashWb2c::class, 'send_mail']);
+Route::middleware(['auth:sanctum', 'verified'])->get('/renderw2bc', [BlashWb2c::class, 'cetak_pdf']);
