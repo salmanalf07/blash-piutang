@@ -124,7 +124,7 @@
           <span>Dashboard</span>
         </a>
       </li><!-- End Dashboard Nav -->
-      <?php $link = ['reaktif', 'reak_history', 'infoautodebet', 'infoautodebet_history', 'hasilautodebet', 'hasilautodebet_history', 'reminderPembayaran', 'reminderPembayaran_history', 'reminderKrs12', 'reminderKrs12_history', 'reminderKrs3', 'reminderKrs3_history']; ?>
+      <?php $link = ['reaktif', 'reak_history', 'infoautodebet', 'infoautodebet_history', 'hasilautodebet', 'hasilautodebet_history', 'reminderPembayaran', 'reminderPembayaran_history', 'reminderKrs12', 'reminderKrs12_history', 'reminderKrs3', 'reminderKrs3_history', 'reminderPembayaranBol', 'reminderPembayaranBol_history']; ?>
       <li class="nav-item">
         <a class="nav-link {{ request()->is($link) ? 'active' : 'collapsed'}}" data-bs-target="#components-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-menu-button-wide"></i><span>Blash</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -227,6 +227,23 @@
               </li>
               <li>
                 <a class="layer3 {{ request()->is('reminderPembayaran_history') ? 'active' : ''}}" href="/reminderPembayaran_history">
+                  <span>History</span>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a class="nav-link {{ request()->is('reminderPembayaranBol','reminderPembayaranBol_history') ? 'blue' : 'collapsed'}}" data-bs-target="#reminderPembayaranBol-nav" data-bs-toggle="collapse" href="#">
+              <i class="bi bi-chevron-down" style="margin-right: 5px;"></i><span>Reminder Pembayaran BOL</span>
+            </a>
+            <ul id="reminderPembayaranBol-nav" class="nav-content collapse {{ request()->is('reminderPembayaranBol','reminderPembayaranBol_history') ? 'show' : ''}}">
+              <li>
+                <a class="layer3 {{ request()->is('reminderPembayaranBol') ? 'active' : ''}}" href="/reminderPembayaranBol">
+                  <span>Dashboard</span>
+                </a>
+              </li>
+              <li>
+                <a class="layer3 {{ request()->is('reminderPembayaranBol_history') ? 'active' : ''}}" href="/reminderPembayaranBol_history">
                   <span>History</span>
                 </a>
               </li>
