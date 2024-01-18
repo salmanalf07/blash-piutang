@@ -57,7 +57,7 @@ class SendMailEnrichmentJob implements ShouldQueue
         $dada['nim'] = $this->data->nim;
         $dada["body"] = "Ini Email testing Enrichment pake Queue";
 
-        Mail::send('emails.myTestMail', $dada, function ($message) use ($dada, $pdf) {
+        Mail::mailer('ss_mailer')->send('emails.myTestMail', $dada, function ($message) use ($dada, $pdf) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject'])

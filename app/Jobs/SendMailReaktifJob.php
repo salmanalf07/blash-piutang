@@ -60,7 +60,7 @@ class SendMailReaktifJob implements ShouldQueue
         $dada["semester"] = $semester;
         $dada["tgl_semester"] = $this->data->semester;
 
-        Mail::send('emails.myTestMail', $dada, function ($message) use ($dada, $pdf) {
+        Mail::mailer('ss_mailer')->send('emails.myTestMail', $dada, function ($message) use ($dada, $pdf) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject'])

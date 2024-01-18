@@ -45,7 +45,7 @@ class SendMailReminderPembayaran implements ShouldQueue
 
         $dad = $this->data;
 
-        Mail::send('emails.MailReminderPembayaran', ['data' => $this->data, $dada], function ($message) use ($dada) {
+        Mail::mailer('ss_mailer')->send('emails.MailReminderPembayaran', ['data' => $this->data, $dada], function ($message) use ($dada) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject'])

@@ -93,6 +93,20 @@ return [
                 'name' => env('BOL_MAIL_FROM_NAME', 'Example'),
             ],
         ],
+        'ss_mailer' => [
+            'transport' => 'smtp',
+            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port' => env('MAIL_PORT', 587),
+            'encryption' => env('MAIL_ENCRYPTION', 'tls'),
+            'username' => env('SS_MAIL_USERNAME'),
+            'password' => env('SS_MAIL_PASSWORD'),
+            'timeout' => null,
+            'auth_mode' => null,
+            'from' => [
+                'address' => env('SS_MAIL_FROM_ADDRESS', 'hello@example.com'),
+                'name' => env('SS_MAIL_FROM_NAME', 'Example'),
+            ],
+        ],
     ],
 
     /*

@@ -41,7 +41,7 @@ class SendMailReminKrs12 implements ShouldQueue
         $dada['jatem'] = $this->data->jatem;
         $dada['jatem_auto'] = $this->data->jatem_auto;
 
-        Mail::send('emails.MailReminKrs12', ['data' => $this->data, $dada], function ($message) use ($dada) {
+        Mail::mailer('ss_mailer')->send('emails.MailReminKrs12', ['data' => $this->data, $dada], function ($message) use ($dada) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject'])

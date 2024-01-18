@@ -44,7 +44,7 @@ class SendMailInfoAutodebet implements ShouldQueue
         $dada['tgl_batas'] = $this->data->tgl_batas;
         $dada['biaya'] = $this->data->biaya;
 
-        Mail::send('emails.MailNextAutoDebet', $dada, function ($message) use ($dada) {
+        Mail::mailer('ss_mailer')->send('emails.MailNextAutoDebet', $dada, function ($message) use ($dada) {
             //Mail::send('emails.myTestMail', $dada, function ($message) use ($dada) {
             $message->to($dada['email'])
                 ->subject($dada['subject'])
