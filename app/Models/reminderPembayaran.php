@@ -17,6 +17,7 @@ class reminderPembayaran extends Model
         'email_cc1',
         'email_cc2',
         'semester_now',
+        'autoDebet',
         'i_tambahan',
         'i_tambahan_1',
         'status',

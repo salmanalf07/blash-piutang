@@ -42,6 +42,7 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'email_cc1' => $row['email_cc1'],
                 'email_cc2' => $row['email_cc2'],
                 'semester_now' => $row['semester_now'],
+                'autoDebet' => $this->transformDate($row['date_auto_debet']),
                 'i_tambahan' => $row['info_tambahan_1'],
                 'i_tambahan_1' => $row['info_tambahan_2'],
             ]);
@@ -73,6 +74,7 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
             detReminPemb2::create([
                 'reminPembId' => $reminBuyName->id,
                 'semester' => $row['2_periode_semester'],
+                'daftarUlang' => $row['2_sisa_daftar_ulang'],
                 'sisaBP3' => $row['2_sisa_bp3'],
                 'sisaFPU' => $row['2_sisa_fpu'],
                 'sisaSKS-1' => $row['2_sisa_sks_1'],
@@ -83,6 +85,7 @@ class reminderPembayaranImport implements ToCollection, WithHeadingRow
                 'sisaBuku' => $row['2_sisa_buku'],
                 'beelinguaFee' => $row['2_beelingua_fee'],
                 'totalTunggakan' => $row['2_sisa_bp3'] + $row['2_sisa_fpu'] + $row['2_sisa_sks_1'] + $row['2_sisa_sks_2'] + $row['2_sisa_dp3'] + $row['2_sisa_alat'] + $row['2_sisa_lab'] + $row['2_sisa_buku'] + $row['2_beelingua_fee'],
+                'jatemDaftarUlang' => $this->transformDate($row['2_jatem_daftar_ulang']),
                 'jatemBP3' => $this->transformDate($row['2_jatem_bp3']),
                 'jatemFPU' => $this->transformDate($row['2_jatem_fpu']),
                 'jatemSKS-1' => $this->transformDate($row['2_jatem_sks_1']),

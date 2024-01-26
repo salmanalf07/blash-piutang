@@ -13,6 +13,7 @@ class detReminPemb2 extends Model
     protected $fillable = [
         'reminPembId',
         'semester',
+        'daftarUlang',
         'sisaBP3',
         'sisaFPU',
         'sisaSKS-1',
@@ -23,6 +24,7 @@ class detReminPemb2 extends Model
         'sisaBuku',
         'beelinguaFee',
         'totalTunggakan',
+        'jatemDaftarUlang',
         'jatemBP3',
         'jatemFPU',
         'jatemSKS-1',
