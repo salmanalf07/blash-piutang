@@ -69,11 +69,11 @@ class SendMailReminderPembayaran implements ShouldQueue
             $post->status = "SUCCESS";
             $post->save();
             //delete
-            // $post->delete();
-            // $postt = detReminPemb1::where('reminPembId', $this->data->id);
-            // $postt->delete();
-            // $posttt = detReminPemb2::where('reminPembId', $this->data->id);
-            // $posttt->delete();
+            $post->delete();
+            $postt = detReminPemb1::where('reminPembId', $this->data->id);
+            $postt->delete();
+            $posttt = detReminPemb2::where('reminPembId', $this->data->id);
+            $posttt->delete();
         }
     }
 }
